@@ -1,13 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Game from './pages/Game';
 
 function App() {
   return (
-    <div className="app">
-      <h1>BrainDex Trivia</h1>
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,56 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
-import QuestionCard from '../components/QuestionCard';
-
-const API_URL = 'https://opentdb.com/api.php?amount=20&category=22';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
-  const [questions, setQuestions] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchQuestions();
-  }, []);
-
-  const fetchQuestions = async () => {
-    try {
-      // Verificar cache local
-      const cachedQuestions = localStorage.getItem('triviaQuestions');
-      if (cachedQuestions) {
-        setQuestions(JSON.parse(cachedQuestions));
-        setLoading(false);
-        return;
-      }
-
-      // Fazer requisição à API
-      const response = await fetch(API_URL);
-      if (!response.ok) {
-        if (response.status === 429) {
-          throw new Error('Too many requests. Please try again later.');
-        }
-        throw new Error('Failed to fetch questions.');
-      }
-
-      const data = await response.json();
-      localStorage.setItem('triviaQuestions', JSON.stringify(data.results)); // Salvar no cache
-      setQuestions(data.results);
-      setLoading(false);
-    } catch (err) {
-      setError(err.message);
-      setLoading(false);
-    }
-  };
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
-  if (!questions || questions.length === 0) return <p>No questions available. Please try again later.</p>;
-
   return (
-    <div>
-      {questions.map((question, index) => (
-        <QuestionCard key={index} question={question} />
-      ))}
+    <div className='container d-flex justify-content-center text-center align-items-center'>
+        <div className="flex flex-col items-center justify-center text-center h-screen bg-blue-100">
+      <h1 className="text-4xl font-bold text-gray-800">Bem-vindo ao BrainDex</h1>
+      <p className="text-xl mt-4 text-gray-600">Escolha sua trilha de conhecimento e comece a jogar!</p>
+      <Link
+        to="/game"
+        className="mt-6 px-6 py-3 bg-blue-500 text-dark border border rounded font-semibold rounded-lg hover:bg-blue-600"
+      >
+        Iniciar Trilha de Geografia
+      </Link>
+    </div> 
+
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import js from '@eslint/js';
+import globals from 'globals';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
   { ignores: ['dist'] },
@@ -35,4 +35,10 @@ export default [
       ],
     },
   },
-]
+  {
+    files: ['tailwind.config.js', 'postcss.config.js'], // Aplica aos arquivos de configuração
+    languageOptions: {
+      globals: globals.node, // Adiciona suporte ao ambiente Node.js
+    },
+  },
+];
