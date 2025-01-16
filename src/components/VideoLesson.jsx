@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function VideoLesson({ videoUrl }) {
   return (
-    <div className="video-lesson my-5 d-flex justify-content-center">
+    <div className="video-lesson my-3 d-flex justify-content-center">
       <div
         className="container text-center"
         style={{

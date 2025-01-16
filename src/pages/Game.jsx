@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Importa o hook para navegação
 import Narrative from '../components/Narrative';
 import CardDeck from '../components/CardDeck';
 import VideoLesson from '../components/VideoLesson'; // Importa o componente de vídeo
 import questions from '../data/questions'; // Importa as questões
 
 function Game() {
+  const navigate = useNavigate(); // Hook para navegação
   const totalCards = questions.length; // Total inicial de cartas
   const [progress, setProgress] = useState(0); // Progresso da trilha
   const [message, setMessage] = useState('Bem-vindo à trilha de Geologia! Assista a vídeo aula e clique em um card de questões.');
@@ -46,6 +48,18 @@ function Game() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
+            {/* Botão para retornar à Home */}
+      <Row className="my-1">
+        <Col className="text-center">
+          <Button
+            variant="secondary"
+            onClick={() => navigate('/')} // Navega para a Home
+            className="mb-3"
+          >
+            Voltar para a Home
+          </Button>
+        </Col>
+      </Row>
               <Narrative message={message} />
               <VideoLesson videoUrl="https://www.youtube.com/embed/lX_NDtrBPn8" /> {/* Adiciona o vídeo */}
               <p className="text-success mt-3">{motivation}</p> {/* Mensagem motivacional */}
@@ -71,6 +85,7 @@ function Game() {
           </Col>
         </Row>
       )}
+      
     </Container>
   );
 }
