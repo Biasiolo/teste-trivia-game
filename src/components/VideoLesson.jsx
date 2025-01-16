@@ -3,14 +3,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function VideoLesson() {
+function VideoLesson({ videoUrl }) {
   return (
-    <div className="video-lesson my-4 text-center">
-      <h2 className="mb-3">Video Aula</h2>
+    <div className="video-lesson my-5 d-flex justify-content-center">
       <div
-        className=" mx-auto"
+        className="container text-center"
+        style={{
+          maxWidth: '960px', // Largura máxima maior para telas grandes
+        }}
       >
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lX_NDtrBPn8?si=fKk-KpNAl8MyeDHo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2 className="mb-4">Video Aula</h2>
+        <div>
+          <iframe
+            src={videoUrl}
+            title="Video Aula"
+            allowFullScreen
+            frameBorder="0"
+            style={{
+                maxWidth: '960px', // Largura máxima maior para desktops
+                width: '80vw',
+                height: '40vh', // Adapta altura automaticamente
+                border: '2px solid #ddd', // Bordas mais destacadas
+                borderRadius: '12px', // Bordas arredondadas mais suaves
+                overflow: 'hidden',
+              }}
+          ></iframe>
+        </div>
       </div>
     </div>
   );
