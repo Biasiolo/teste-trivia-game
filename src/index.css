@@ -9,9 +9,22 @@
   
 
   .card-deck1 {
-    background-color: rgb(2, 90, 112);
+    background-color: rgb(0, 122, 126);
   } 
 
   .body-card {
-    background-color: rgb(2, 90, 112);
+    background-color: rgb(0, 122, 126);
   }
+
+  .button-hover-dark:hover {
+    color: #212529 !important; /* Cor do texto dark */
+  }
+
+  .button-selected {
+    color: #212529 !important; /* Cor do texto dark */
+  }
+
+  .modal-backdrop.show {
+    background-color: rgb(3, 3, 3) !important; /* Fundo mais escuro */
+  }
+  

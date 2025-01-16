@@ -9,19 +9,23 @@ function CardDeck({ cards, onAnswer }) {
   const [selectedCard, setSelectedCard] = useState(null);
 
   return (
-    <div className=" card-deck1 d-flex justify-content-center flex-wrap py-4 my-3">
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          className="m-2"
-          style={{ width: '88px', height: '116px', cursor: 'pointer' }}
-          onClick={() => setSelectedCard(card)}
-        >
-          <Card.Body className="d-flex align-items-center justify-content-center">
-            <Card.Title>{`${card.id}`}</Card.Title>
-          </Card.Body>
-        </Card>
-      ))}
+    <div className="card-deck1 d-flex flex-column align-items-center py-4 my-3">
+      {/* Título centralizado acima dos cards */}
+      <h3 className="text-center mb-4">Responda as questões abaixo:</h3>
+      <div className="d-flex justify-content-center flex-wrap">
+        {cards.map((card) => (
+          <Card
+            key={card.id}
+            className="m-2"
+            style={{ width: '88px', height: '116px', cursor: 'pointer' }}
+            onClick={() => setSelectedCard(card)}
+          >
+            <Card.Body className="d-flex align-items-center justify-content-center">
+              <Card.Title>{`${card.id}`}</Card.Title>
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
       {selectedCard && (
         <CardModal
           card={selectedCard}
@@ -50,4 +54,3 @@ CardDeck.propTypes = {
 };
 
 export default CardDeck;
-
