@@ -9,7 +9,7 @@ function CardDeck({ cards, onAnswer }) {
   const [selectedCard, setSelectedCard] = useState(null);
 
   return (
-    <div className="d-flex justify-content-center flex-wrap p-3">
+    <div className=" card-deck1 d-flex justify-content-center flex-wrap p-5 my-5">
       {cards.map((card) => (
         <Card
           key={card.id}
@@ -18,7 +18,7 @@ function CardDeck({ cards, onAnswer }) {
           onClick={() => setSelectedCard(card)}
         >
           <Card.Body className="d-flex align-items-center justify-content-center">
-            <Card.Title>{`Card ${card.id}`}</Card.Title>
+            <Card.Title>{`${card.id}`}</Card.Title>
           </Card.Body>
         </Card>
       ))}

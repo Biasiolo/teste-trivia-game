@@ -17,6 +17,7 @@ function CardModal({ card, onClose, onAnswer }) {
         <Modal.Title>{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        <p className="text-muted"><em>{card.concept}</em></p> {/* Exibe o conceito */}
         <p>{card.question}</p>
         <div className="d-flex flex-column">
           {card.answers.map((answer, index) => (
@@ -51,6 +52,7 @@ function CardModal({ card, onClose, onAnswer }) {
 CardModal.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.number.isRequired,
+    concept: PropTypes.string.isRequired, // Adicionado conceito
     question: PropTypes.string.isRequired,
     answers: PropTypes.arrayOf(PropTypes.string).isRequired,
     correct: PropTypes.number.isRequired,
