@@ -62,13 +62,7 @@ const questions = [
         answers: ['Floresta Amazônica', 'Savanas Africanas', 'Floresta Boreal', 'Deserto do Saara'],
         correct: 0,
     },
-    {
-        id: 10,
-        concept: 'O ciclo das rochas descreve a transformação contínua entre os três principais tipos de rochas: sedimentares, ígneas e metamórficas.',
-        question: 'Qual processo transforma rochas sedimentares em metamórficas?',
-        answers: ['Solidificação', 'Metamorfismo', 'Intemperismo', 'Compactação'],
-        correct: 1,
-    },
+
 ];
 
 export default questions;
