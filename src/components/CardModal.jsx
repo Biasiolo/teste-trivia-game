@@ -16,7 +16,7 @@ function CardModal({ card, onClose, onAnswer }) {
       <Modal.Header closeButton className="bg-light.bg-gradient">
         <Modal.Title >{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="bg-dark text-light">
+      <Modal.Body className="body-card text-light">
         <p className="text-white"><em>{card.concept}</em></p> {/* Exibe o conceito */}
         <p className="fw-bold">{card.question}</p>
         <div className="d-flex flex-column">
