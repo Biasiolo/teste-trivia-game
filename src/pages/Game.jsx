@@ -32,10 +32,10 @@ function Game() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           <Narrative message={message} />
           <p className="text-success mt-3">{motivation}</p> {/* Mensagem motivacional */}
-          <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-75 mt-3" />
+          <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-75 my-4" />
         </Col>
       </Row>
-      <Row className="bg-light border-top">
+      <Row className="bg-light border-top mb-4">
         <Col>
           <CardDeck cards={cards} onAnswer={handleAnswer} />
         </Col>

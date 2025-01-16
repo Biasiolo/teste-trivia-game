@@ -9,12 +9,12 @@ function CardDeck({ cards, onAnswer }) {
   const [selectedCard, setSelectedCard] = useState(null);
 
   return (
-    <div className=" card-deck1 d-flex justify-content-center flex-wrap p-5 my-5">
+    <div className=" card-deck1 d-flex justify-content-center flex-wrap py-4 my-3">
       {cards.map((card) => (
         <Card
           key={card.id}
           className="m-2"
-          style={{ width: '100px', height: '140px', cursor: 'pointer' }}
+          style={{ width: '88px', height: '116px', cursor: 'pointer' }}
           onClick={() => setSelectedCard(card)}
         >
           <Card.Body className="d-flex align-items-center justify-content-center">
