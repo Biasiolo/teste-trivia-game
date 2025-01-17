@@ -9,11 +9,12 @@
   
 
   .card-deck1 {
-    background-color: rgb(0, 122, 126);
+    background-color: rgb(5, 58, 61);
+    
   } 
 
   .body-card {
-    background-color: rgb(0, 122, 126);
+    background-color: rgb(5, 58, 61);
   }
 
   .button-hover-dark:hover {
@@ -27,4 +28,21 @@
   .modal-backdrop.show {
     background-color: rgb(3, 3, 3) !important; /* Fundo mais escuro */
   }
+
+  .card1 {
+    background: transparent;
+    border: none;
+  }
   
+  .card-gradient {
+    background: linear-gradient(165deg, rgb(40, 141, 145), rgb(107, 175, 179), rgb(119, 188, 192), rgb(129, 184, 184));
+    color: #ffffff; /* Cor do texto */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 88px;
+    height: 112px;
+}
+
+

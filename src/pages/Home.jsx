@@ -1,22 +1,23 @@
+// src/pages/Home.jsx
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  const navigate = useNavigate(); // Hook para navegação programática
+  const navigate = useNavigate(); // Hook para navegação
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="container d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="text-center">
         <h1 className="display-4 fw-bold text-primary">Bem-vindo ao BrainDex</h1>
         <p className="lead text-secondary mt-4">
-          Escolha sua trilha de conhecimento e comece a jogar!
+          Explore trilhas de conhecimento interativas e divirta-se aprendendo!
         </p>
         <button
           className="btn btn-primary btn-lg mt-4"
-          onClick={() => navigate('/game')} // Navega para a página do jogo
+          onClick={() => navigate('/modules')}
         >
-          Iniciar Trilha de Geografia
+          Explorar Trilha de Geografia
         </button>
       </div>
     </div>

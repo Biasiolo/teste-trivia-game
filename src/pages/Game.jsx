@@ -1,45 +1,54 @@
+// src/pages/Game.jsx
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Importa o hook para navegação
+import { useParams, useNavigate } from 'react-router-dom';
 import Narrative from '../components/Narrative';
 import CardDeck from '../components/CardDeck';
-import VideoLesson from '../components/VideoLesson'; // Importa o componente de vídeo
-import questions from '../data/questions'; // Importa as questões
+import VideoLesson from '../components/VideoLesson';
+import modules from '../data/modules';
+import questions from '../data/questions';
 
 function Game() {
-  const navigate = useNavigate(); // Hook para navegação
-  const totalCards = questions.length; // Total inicial de cartas
-  const [progress, setProgress] = useState(0); // Progresso da trilha
-  const [message, setMessage] = useState('Bem-vindo à trilha de Geologia! Assista a vídeo aula e clique em um card de questões.');
-  const [motivation, setMotivation] = useState('Vamos começar!');
-  const [cards, setCards] = useState(questions); // Usa as questões importadas
-  const [correctAnswers, setCorrectAnswers] = useState(0); // Contador de acertos
-  const [wrongAnswers, setWrongAnswers] = useState(0); // Contador de erros
+  const { moduleId } = useParams(); // Captura o ID do módulo da URL
+  const navigate = useNavigate();
+  const module = modules.find((mod) => mod.id === parseInt(moduleId, 10)); // Encontra o módulo correspondente
+  const totalCards = questions.length; // Número total de questões
+  const [progress, setProgress] = useState(0);
+  const [cards, setCards] = useState(questions);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+
+  useEffect(() => {
+    if (!module) {
+      navigate('/modules'); // Redireciona se o módulo não for encontrado
+    }
+  }, [module, navigate]);
 
   const handleAnswer = (id, isCorrect) => {
+    // Incrementa a pontuação correta, se acertar
     if (isCorrect) {
-      setCorrectAnswers((prev) => prev + 1); // Incrementa acertos
-      setMessage('Resposta correta! Você está avançando na trilha!');
-      setMotivation('Excelente trabalho! Continue avançando!');
-      setProgress((prevProgress) => prevProgress + 100 / totalCards); // Atualiza progresso com base no total inicial
-    } else {
-      setWrongAnswers((prev) => prev + 1); // Incrementa erros
-      setMessage('Resposta errada. Reflita sobre o conceito e tente novamente.');
-      setMotivation('Não desista! Você consegue superar esse desafio!');
+      setCorrectAnswers((prev) => prev + 1);
     }
 
-    // Remove o card respondido
+    // Atualiza o progresso com base no total de questões
+    setProgress((prevProgress) => prevProgress + 100 / totalCards);
+
+    // Remove a questão respondida
     setCards((prevCards) => prevCards.filter((card) => card.id !== id));
   };
 
-  const resetGame = () => {
-    setProgress(0);
-    setMessage('Bem-vindo à trilha de Geologia! Clique em um card para começar.');
-    setMotivation('Você está indo muito bem! Continue assim!');
-    setCards(questions);
-    setCorrectAnswers(0);
-    setWrongAnswers(0);
+  const updateModuleProgress = () => {
+    const score = Math.round((correctAnswers / totalCards) * 100);
+    module.completed = true;
+    module.score = score;
+
+    // Simula persistência em localStorage
+    const updatedModules = modules.map((mod) =>
+      mod.id === module.id ? module : mod
+    );
+    localStorage.setItem('modules', JSON.stringify(updatedModules));
+
+    navigate('/modules');
   };
 
   return (
@@ -48,44 +57,28 @@ function Game() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
-            {/* Botão para retornar à Home */}
-      <Row className="my-1">
-        <Col className="text-center">
-          <Button
-            variant="secondary"
-            onClick={() => navigate('/')} // Navega para a Home
-            className="mb-3"
-          >
-            Voltar para a Home
-          </Button>
-        </Col>
-      </Row>
-              <Narrative message={message} />
-              <VideoLesson videoUrl="https://www.youtube.com/embed/lX_NDtrBPn8" /> {/* Adiciona o vídeo */}
-              <p className="text-success mt-3">{motivation}</p> {/* Mensagem motivacional */}
+              <Narrative message={`Bem-vindo à trilha ${module?.name || ''}!`} />
+              <VideoLesson videoUrl="https://www.youtube.com/embed/lX_NDtrBPn8" />
               <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-75 my-2" />
             </>
           ) : (
             <div className="text-center">
-              <h2>Parabéns! Você completou a trilha!</h2>
-              <p className="mt-3">Resultados:</p>
-              <p className="text-success">Acertos: {correctAnswers}</p>
-              <p className="text-danger">Erros: {wrongAnswers}</p>
-              <Button variant="primary" onClick={resetGame} className="mt-3">
-                Jogar Novamente
+              <h2>Módulo Concluído!</h2>
+              <p>Nota: {Math.round((correctAnswers / totalCards) * 100)}%</p>
+              <Button variant="primary" onClick={updateModuleProgress}>
+                Voltar aos Módulos
               </Button>
             </div>
           )}
         </Col>
       </Row>
       {cards.length > 0 && (
-        <Row className="bg-light border-top my-4">
+        <Row>
           <Col>
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
         </Row>
       )}
-      
     </Container>
   );
 }

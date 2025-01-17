@@ -11,16 +11,16 @@ function CardDeck({ cards, onAnswer }) {
   return (
     <div className="card-deck1 d-flex flex-column align-items-center py-4 my-3">
       {/* Título centralizado acima dos cards */}
-      <h3 className="text-center mb-4">Responda as questões abaixo:</h3>
+      <h3 className="text-center text-light mb-4">Responda as questões abaixo:</h3>
       <div className="d-flex justify-content-center flex-wrap">
         {cards.map((card) => (
           <Card
             key={card.id}
-            className="m-2"
-            style={{ width: '88px', height: '116px', cursor: 'pointer' }}
+            className="m-2 card1"
+
             onClick={() => setSelectedCard(card)}
           >
-            <Card.Body className="d-flex align-items-center justify-content-center">
+            <Card.Body className="d-flex align-items-center justify-content-center card-gradient">
               <Card.Title>{`${card.id}`}</Card.Title>
             </Card.Body>
           </Card>

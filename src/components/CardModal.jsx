@@ -17,7 +17,7 @@ function CardModal({ card, onClose, onAnswer }) {
         <Modal.Title >{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
       <Modal.Body className="body-card text-light">
-        <p className="text-white fs-6"><em>{card.concept}</em></p> {/* Exibe o conceito */}
+        <p className="text-white fs-5">{card.concept}</p> {/* Exibe o conceito */}
         <p className="fw-bold fs-4">{card.question}</p>
         <div className="d-flex flex-column">
           {card.answers.map((answer, index) => (
