@@ -5,18 +5,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Modules from './pages/Modules'; // Página dos módulos
 import Game from './pages/Game'; // Página do jogo (módulo selecionado)
+import Review from './pages/Review';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Página Inicial */}
-        <Route path="/" element={<Home />} />
-        {/* Página de Seleção de Módulos */}
-        <Route path="/modules" element={<Modules />} />
-        {/* Página do Jogo (dinâmica com moduleId) */}
-        <Route path="/game/:moduleId" element={<Game />} />
-        {/* Rota para páginas não encontradas */}
+  <Route path="/" element={<Home />} />
+  <Route path="/modules" element={<Modules />} />
+  <Route path="/game/:moduleId" element={<Game />} />
+  <Route path="/review/:moduleId" element={<Review />} /> 
         <Route
           path="*"
           element={
