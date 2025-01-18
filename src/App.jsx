@@ -1,29 +1,28 @@
 // src/App.jsx
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Modules from './pages/Modules'; // Página dos módulos
-import Game from './pages/Game'; // Página do jogo (módulo selecionado)
+import Modules from './pages/Modules';
+import Game from './pages/Game';
 import Review from './pages/Review';
+import modules from './data/modules';
+import { getProgress, initializeProgress } from './utils/storage';
 
 function App() {
+  useEffect(() => {
+    if (!getProgress()) {
+      initializeProgress(modules); // Inicializa os dados do progresso
+    }
+  }, []);
+
   return (
     <Router>
       <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/modules" element={<Modules />} />
-  <Route path="/game/:moduleId" element={<Game />} />
-  <Route path="/review/:moduleId" element={<Review />} /> 
-        <Route
-          path="*"
-          element={
-            <div className="text-center py-5">
-              <h1>Página não encontrada</h1>
-              <p>Por favor, retorne à página inicial.</p>
-            </div>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/modules" element={<Modules />} />
+        <Route path="/game/:moduleId" element={<Game />} />
+        <Route path="/review/:moduleId" element={<Review />} />
       </Routes>
     </Router>
   );
