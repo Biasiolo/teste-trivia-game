@@ -10,7 +10,7 @@ function CardDeck({ cards, onAnswer }) {
 
   return (
 
-      <div className="card-deck1 rounded d-flex flex-column align-items-center py-4 my-3">
+      <div className="card-deck1 rounded d-flex  flex-column align-items-center py-4 my-3">
       {/* Título centralizado acima dos cards */}
       <h3 className="text-center text-light mb-4">Responda as questões abaixo:</h3>
       <div className="d-flex justify-content-center flex-wrap">

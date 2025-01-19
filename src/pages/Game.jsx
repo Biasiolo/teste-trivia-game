@@ -67,7 +67,7 @@ function Game() {
             <>
               <Narrative message={`Bem-vindo à trilha ${module?.name || ''}!`} />
               <VideoLesson videoUrl={module?.videoUrl || ''} />
-              <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-50 my-2" />
+              <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-50 mb-4 border border-success" />
             </>
           ) : (
             <div className="text-center">
@@ -112,11 +112,11 @@ function Game() {
         </Col>
       </Row>
       {cards.length > 0 && (
-        <Row className='mb-3' >
-          <Col>
+        <Row className='mb-3 bg-success-subtle' >
+          <Col className='bg-dark rounded' >
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
-          <div className='justify-content-center text-center my-2' >
+          <div className='justify-content-center text-center my-2 ' >
           <Button variant="secondary" onClick={() => navigate('/modules')}>
                     Voltar aos Módulos
                   </Button>

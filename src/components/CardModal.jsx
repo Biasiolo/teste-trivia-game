@@ -13,7 +13,7 @@ function CardModal({ card, onClose, onAnswer }) {
 
   return (
     <Modal show onHide={onClose} centered size="lg">
-      <Modal.Header closeButton className="bg-info-subtle bg-gradient">
+      <Modal.Header closeButton className="bg-success-subtle bg-gradient">
         <Modal.Title >{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
       <Modal.Body className="body-card text-light">
@@ -36,7 +36,7 @@ function CardModal({ card, onClose, onAnswer }) {
           ))}
         </div>
       </Modal.Body>
-      <Modal.Footer className="bg-info-subtle bg-gradient">
+      <Modal.Footer className="bg-success-subtle bg-gradient">
         <Button variant="secondary" onClick={onClose}>
           Fechar
         </Button>
