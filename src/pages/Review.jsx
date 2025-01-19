@@ -23,17 +23,16 @@ function Review() {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 flex-column d-flex justify-content-center align-items-center text-center ">
       <h1 className="text-primary text-center mb-4">{reviewData.moduleName}</h1>
       <h2 className="text-success text-center mb-4">Nota: {reviewData.score}%</h2>
 
       <h3 className="mt-4">Gabarito</h3>
-      <Table striped bordered hover responsive className="mt-3">
+      <Table striped bordered hover responsive className="mt-3  justify-content-center">
         <thead>
           <tr>
             <th>#</th>
             <th>Pergunta</th>
-            <th>Sua Resposta</th>
             <th>Resposta Correta</th>
             <th>Resultado</th>
           </tr>
@@ -43,7 +42,7 @@ function Review() {
             <tr key={q.id}>
               <td>{index + 1}</td>
               <td>{q.question}</td>
-              <td>{q.userAnswer || 'Sem resposta'}</td>
+
               <td>{q.answers[q.correct]}</td>
               <td className={q.isCorrect ? 'text-success' : 'text-danger'}>
                 {q.isCorrect ? 'Correto' : 'Errado'}

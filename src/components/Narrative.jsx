@@ -5,7 +5,7 @@ import { Alert } from 'react-bootstrap';
 
 function Narrative({ message }) {
   return (
-    <Alert variant="info" className="text-center">
+    <Alert variant="success" className="text-center">
       {message}
     </Alert>
   );

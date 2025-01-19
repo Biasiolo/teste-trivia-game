@@ -12,7 +12,7 @@ function VideoLesson({ videoUrl }) {
           maxWidth: '960px', // Largura máxima maior para telas grandes
         }}
       >
-        <h2 className="mb-4">Video Aula</h2>
+        <h2 className="mb-2">Video Aula</h2>
         <div>
           <iframe
             src={videoUrl}
