@@ -44,7 +44,7 @@ body {
   }
   
   .card-gradient {
-    background-image: url(/card1.png);
+    background-image: url(/card9.png);
     background-size:contain; /* Ajusta a imagem para cobrir todo o card */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
