@@ -2,7 +2,7 @@ const modulesData = [
     {
       id: 1,
       name: 'Introdução ao Pensamento Geográfico',
-      videoUrl: 'https://www.youtube.com/embed/example1', // Link para vídeo aula específica
+      videoUrl: 'https://www.youtube.com/embed/xn_rU45f0l8?si=C6IY5EZ1KzTi-6-P', // Link para vídeo aula específica
       questions: [
         {
           id: 1,
