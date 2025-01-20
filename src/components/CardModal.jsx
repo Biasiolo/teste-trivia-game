@@ -16,8 +16,8 @@ function CardModal({ card, onClose, onAnswer }) {
       <Modal.Header closeButton className="bg-success-subtle bg-gradient">
         <Modal.Title >{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="body-card text-light">
-        <p className="text-white fs-5">{card.concept}</p> {/* Exibe o conceito */}
+      <Modal.Body className="body-card text-white text-center">
+        <p className=" fs-5">{card.concept}</p> {/* Exibe o conceito */}
         <p className="fw-bold fs-4">{card.question}</p>
         <div className="d-flex flex-column">
           {card.answers.map((answer, index) => (

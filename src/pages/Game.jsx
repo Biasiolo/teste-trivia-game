@@ -74,7 +74,7 @@ function Game() {
   };
 
   return (
-    <Container fluid className="d-flex flex-column bg-success-subtle bg-gradient  vh-100">
+    <Container fluid className="d-flex flex-column bg-transparent  vh-100">
       <Row className="flex-grow-1 mt-3 ">
         <Col className="d-flex flex-column  justify-content-center align-items-center">
           {cards.length > 0 ? (
@@ -127,7 +127,7 @@ function Game() {
       </Row>
       {cards.length > 0 && (
         <Row className='mb-3 bg-success-subtle bg-gradient ' >
-          <Col className='bg-dark rounded' >
+          <Col className='deck3 rounded' >
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
           <div className='justify-content-center text-center my-2 ' >
