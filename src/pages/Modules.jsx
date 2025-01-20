@@ -48,8 +48,9 @@ function Modules() {
   };
 
   return (
-    <div className="container p-5 bg-success-subtle bg-gradient rounded mt-5 border border-success">
-      <div className="text-center mb-4">
+    <div className="container p-3   mod3  rounded mt-5 border border-success">
+      <div className='bg-success-subtle bg-gradient rounded p-4'>
+      <div className="text-center rounded  py-1 mb-4">
         <h1 className="text-dark">Dashboard - Trilha de Geografia</h1>
         <div className="mt-3 w-75 mx-auto">
           <p className="mb-1">Nota Geral</p>
@@ -64,8 +65,8 @@ function Modules() {
         {progressModules.map((module) => (
           <div key={module.id} className="col-md-6 mb-4">
             <Card
-              className={`shadow-sm ${
-                module.completed ? 'border-success' : 'border-secondary'
+              className={`shadow-sm test-dark ${
+                module.completed ? 'border-success' : 'border-info'
               }`}
             >
               <Card.Body>
@@ -96,7 +97,7 @@ function Modules() {
                     {module.completed ? 'Revisar' : 'Começar'}
                   </button>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-outline-danger"
                     onClick={() => resetModuleProgress(module.id)}
                   >
                     Reiniciar
@@ -110,6 +111,8 @@ function Modules() {
 
       <div className="text-center mt-5">
         <button className="btn btn-secondary btn-lg me-3" onClick={() => navigate('/')}>Voltar à Home</button>
+      </div>
+
       </div>
     </div>
   );

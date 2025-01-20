@@ -62,3 +62,8 @@ body {
   background: radial-gradient(circle, #4A90E2, #50E3C2, #F5A623, #D0021B);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
+
+.mod3 {
+  background: radial-gradient(circle, #D0021B, #4A90E2, #50E3C2 );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}

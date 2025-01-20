@@ -130,8 +130,8 @@ function Game() {
           <Col className='deck3 rounded' >
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
-          <div className='justify-content-center text-center my-2 ' >
-          <Button variant="secondary" onClick={() => navigate('/modules')}>
+          <div className='justify-content-center text-center my-3 ' >
+          <Button variant="outline-success" onClick={() => navigate('/modules')}>
                     Voltar aos Módulos
                   </Button>
           </div>
