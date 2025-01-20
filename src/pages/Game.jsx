@@ -85,18 +85,18 @@ function Game() {
             </>
           ) : (
             <div className="text-center">
-              <h2 className="mb-3">Módulo Concluído!</h2>
-              <p className="text-success fw-bold">
-                Acertos: {correctAnswers}/{totalCards}
+              <h2 className="display-5 mb-3 fw-bold">Módulo Concluído!</h2>
+              <p className="text-success fs-3 mb-0 fw-bold">
+                Acertos: {correctAnswers}
               </p>
-              <p className="text-danger fw-bold">
+              <p className="text-danger fs-4  fw-bold">
                 Erros: {totalCards - correctAnswers}
               </p>
 
               {/* Gabarito */}
               <h3 className="mt-4">Gabarito</h3>
-              <Table striped bordered hover responsive className="mt-3">
-                <thead>
+              <Table striped borderless hover responsive className="mt-3 table-success fs-5 justify-content-center">
+                <thead className="table-warning">
                   <tr>
                     <th>#</th>
                     <th>Pergunta</th>

@@ -48,7 +48,7 @@ function Modules() {
   };
 
   return (
-    <div className="container p-3   mod3  rounded mt-5 border border-success">
+    <div className="container p-3 mod3  rounded my-5">
       <div className='bg-success-subtle bg-gradient rounded p-4'>
       <div className="text-center rounded  py-1 mb-4">
         <h1 className="text-dark">Dashboard - Trilha de Geografia</h1>
