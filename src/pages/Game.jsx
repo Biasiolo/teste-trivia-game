@@ -49,18 +49,32 @@ function Game() {
     const score = Math.round((correctAnswers / totalCards) * 100);
     module.completed = true;
     module.score = score;
-
-    // Simula persistência em localStorage
+  
+    // Salva o gabarito no localStorage
+    const reviewData = {
+      moduleId: module.id,
+      moduleName: module.name,
+      score,
+      answeredQuestions,
+    };
+    const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    const updatedReviews = [
+      ...savedReviews.filter((r) => r.moduleId !== module.id),
+      reviewData,
+    ];
+    localStorage.setItem('reviews', JSON.stringify(updatedReviews));
+  
+    // Atualiza o progresso do módulo
     const updatedModules = modules.map((mod) =>
       mod.id === module.id ? module : mod
     );
     localStorage.setItem('modules', JSON.stringify(updatedModules));
-
+  
     navigate('/modules');
   };
 
   return (
-    <Container fluid className="d-flex flex-column bg-success-subtle vh-100">
+    <Container fluid className="d-flex flex-column bg-success-subtle bg-gradient  vh-100">
       <Row className="flex-grow-1 mt-3 ">
         <Col className="d-flex flex-column  justify-content-center align-items-center">
           {cards.length > 0 ? (
@@ -104,7 +118,7 @@ function Game() {
                 </tbody>
               </Table>
 
-              <Button variant="primary" className="mt-4" onClick={updateModuleProgress}>
+              <Button variant="success" className="mt-4" onClick={updateModuleProgress}>
                 Voltar aos Módulos
               </Button>
             </div>
@@ -112,7 +126,7 @@ function Game() {
         </Col>
       </Row>
       {cards.length > 0 && (
-        <Row className='mb-3 bg-success-subtle' >
+        <Row className='mb-3 bg-success-subtle bg-gradient ' >
           <Col className='bg-dark rounded' >
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
