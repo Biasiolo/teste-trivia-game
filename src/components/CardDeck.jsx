@@ -17,7 +17,7 @@ function CardDeck({ cards, onAnswer }) {
         {cards.map((card) => (
           <Card
             key={card.id}
-            className="m-2 card1 text-dark"
+            className="m-2 card1 text-dark p-1"
 
             onClick={() => setSelectedCard(card)}
           >

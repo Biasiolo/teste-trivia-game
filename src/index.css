@@ -16,7 +16,7 @@ body {
   
 
   .card-deck1 {
-    background-color: rgb(1, 80, 73);
+    background-color: #015049;
     
   } 
 
@@ -43,7 +43,7 @@ body {
   }
   
   .card-gradient {
-    background-image: url(/carta.png);
+    background-image: url(/BRAINDEX2.png);
     background-size:contain; /* Ajusta a imagem para cobrir todo o card */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
