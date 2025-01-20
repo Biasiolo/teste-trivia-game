@@ -48,12 +48,12 @@ function Modules() {
   };
 
   return (
-    <div className="container p-5 bg-success-subtle bg-gradient rounded mt-5">
+    <div className="container p-5 bg-success-subtle bg-gradient rounded mt-5 border border-success">
       <div className="text-center mb-4">
         <h1 className="text-dark">Dashboard - Trilha de Geografia</h1>
         <div className="mt-3 w-75 mx-auto">
           <p className="mb-1">Nota Geral</p>
-          <ProgressBar
+          <ProgressBar className=" mb-4 border border-success"
             now={isNaN(averageScore) ? 0 : averageScore}
             label={`${isNaN(averageScore) ? 0 : averageScore}%`}
           />
