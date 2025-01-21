@@ -26,12 +26,12 @@ function Review() {
   }
 
   return (
-    <div className="container py-5 flex-column d-flex justify-content-center align-items-center text-center ">
+    <div className="container p-4 flex-column d-flex justify-content-center align-items-center text-center">
       <h1 className="display-4 fw-bold text-primary text-center mb-4">{reviewData.moduleName}</h1>
       <h2 className="text-success text-center mb-4 fw-bold">Nota: {reviewData.score}%</h2>
 
       <h3 className="mt-4">Gabarito</h3>
-      <Table striped borderless hover responsive className="mt-3 table-success fs-5 justify-content-center">
+      <Table striped borderless hover responsive  className="mt-3 table-success fs-6 justify-content-center">
                       <thead className="table-warning">
           <tr>
             <th>#</th>
