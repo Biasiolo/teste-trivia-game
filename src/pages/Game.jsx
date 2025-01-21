@@ -126,7 +126,7 @@ function Game() {
         </Col>
       </Row>
       {cards.length > 0 && (
-        <Row className='mb-3 bg-success-subtle bg-gradient ' >
+        <Row className='mb-3 bg-transparent bg-gradient ' >
           <Col className='deck3 rounded' >
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>

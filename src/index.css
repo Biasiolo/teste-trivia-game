@@ -18,7 +18,7 @@ body {
   
 
   .card-deck1 {
-    background-color: #02718d;
+    background-color: #f0e1a7;
     
   } 
 
@@ -45,7 +45,7 @@ body {
   }
   
   .card-gradient {
-    background-image: url(/card8.png);
+    background-image: url(/card11.png);
     background-size:contain; /* Ajusta a imagem para cobrir todo o card */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProgressBar, Card } from 'react-bootstrap';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import modules from '../data/modules';
+import { SlGraph } from "react-icons/sl";
 
 function Modules() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ function Modules() {
     <div className="container p-3 mod3  rounded my-5">
       <div className='bg-success-subtle bg-gradient rounded p-4'>
       <div className="text-center rounded  py-1 mb-4">
-        <h1 className="text-dark">Dashboard - Trilha de Geografia</h1>
+        <h1 className="text-dark"> Dashboard <SlGraph /> Trilha Geografia</h1>
         <div className="mt-3 w-75 mx-auto">
           <p className="mb-1">Nota Geral</p>
           <ProgressBar className=" mb-4 border border-success"
