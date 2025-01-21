@@ -18,7 +18,7 @@ body {
   
 
   .card-deck1 {
-    background: linear-gradient(90deg, #aaffd0, #bfffdf, #e7f8f3, #bfffdf, #aaffd0); /* Gradiente com tons de amarelo */
+    background: linear-gradient(90deg,  #a3e6d2, #bfe9de, #ceeee5, #bfe9de, #a3e6d2); /* Gradiente com tons de amarelo */
   }
 
   .body-card {
@@ -59,11 +59,17 @@ body {
 
 
 .deck3 {
-  background: radial-gradient(circle, #d00262, #4A90E2, #50E3C2 );
+  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2 );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .mod3 {
-  background: radial-gradient(circle, #d00262, #4A90E2, #50E3C2 );
+  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2 );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
+
+
+  .deck-title {
+    text-shadow: 1px 2px 2px rgba(209, 238, 233, 0.7); /* Sombra clara */
+  }
+

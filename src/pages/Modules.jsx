@@ -71,7 +71,7 @@ function Modules() {
               }`}
             >
               <Card.Body>
-                <Card.Title className="text-center">{module.name}</Card.Title>
+                <Card.Title className="text-center fw-bold">{module.name}</Card.Title>
                 <Card.Text className="text-center">
                   {module.completed
                     ? `Módulo concluído. Nota: ${module.score}%`
@@ -86,7 +86,7 @@ function Modules() {
                 </div>
                 <div className="d-flex justify-content-center mt-3">
                   <button
-                    className={`btn ${
+                    className={`btn  fw-bold ${
                       module.completed ? 'btn-outline-success' : 'btn-success'
                     } me-2`}
                     onClick={() =>
@@ -98,7 +98,7 @@ function Modules() {
                     {module.completed ? 'Revisar' : 'Começar'}
                   </button>
                   <button
-                    className="btn btn-outline-danger"
+                    className="btn fw-bold btn-outline-danger"
                     onClick={() => resetModuleProgress(module.id)}
                   >
                     Reiniciar
