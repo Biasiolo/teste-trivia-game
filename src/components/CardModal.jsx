@@ -13,10 +13,10 @@ function CardModal({ card, onClose, onAnswer }) {
 
   return (
     <Modal show onHide={onClose} centered size="lg">
-      <Modal.Header closeButton className="bg-success-subtle bg-gradient">
+      <Modal.Header closeButton className="bg-info-subtle bg-gradient">
         <Modal.Title >{`Pergunta ${card.id}`}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="body-card text-white text-center">
+      <Modal.Body className="body-card text-dark text-center">
         <p className=" fs-5">{card.concept}</p> {/* Exibe o conceito */}
         <p className="fw-bold fs-4">{card.question}</p>
         <div className="d-flex flex-column">
@@ -24,7 +24,7 @@ function CardModal({ card, onClose, onAnswer }) {
             <Button
             key={index}
             variant={selected === index ? 'info' : 'outline-info'}
-            className={`mb-2 fs-5 fw-bold text-light ${
+            className={`mb-2 fs-5 fw-bold text-dark ${
               selected === index ? 'button-selected' : 'button-hover-dark'
             }`}
             onClick={() => setSelected(index)}
@@ -36,7 +36,7 @@ function CardModal({ card, onClose, onAnswer }) {
           ))}
         </div>
       </Modal.Body>
-      <Modal.Footer className="bg-success-subtle bg-gradient">
+      <Modal.Footer className="bg-info-subtle bg-gradient">
         <Button variant="secondary" onClick={onClose}>
           Fechar
         </Button>

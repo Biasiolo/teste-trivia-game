@@ -18,12 +18,11 @@ body {
   
 
   .card-deck1 {
-    background-color: #f0e1a7;
-    
-  } 
+    background: linear-gradient(90deg, #aaffd0, #bfffdf, #e7f8f3, #bfffdf, #aaffd0); /* Gradiente com tons de amarelo */
+  }
 
   .body-card {
-    background-color: #005E54;
+    background-color: #fffbda;
   }
 
   .button-hover-dark:hover {
@@ -60,11 +59,11 @@ body {
 
 
 .deck3 {
-  background: radial-gradient(circle, #D0021B, #4A90E2, #50E3C2 );
+  background: radial-gradient(circle, #d00262, #4A90E2, #50E3C2 );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .mod3 {
-  background: radial-gradient(circle, #D0021B, #4A90E2, #50E3C2 );
+  background: radial-gradient(circle, #d00262, #4A90E2, #50E3C2 );
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
