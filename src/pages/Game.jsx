@@ -74,9 +74,9 @@ function Game() {
   };
 
   return (
-    <Container fluid className="d-flex flex-column bg-transparent  vh-100">
+    <Container fluid className="d-flex flex-column bg-transparent px-5 vh-100">
       <Row className="flex-grow-1 mt-3 ">
-        <Col className="d-flex flex-column  justify-content-center align-items-center">
+        <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
               <Narrative message={`Bem-vindo à trilha ${module?.name || ''}!`} />
