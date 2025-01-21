@@ -5,6 +5,7 @@ import { ProgressBar, Card } from 'react-bootstrap';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import modules from '../data/modules';
 import { SlGraph } from "react-icons/sl";
+import { BsGeoAlt } from 'react-icons/bs';
 
 function Modules() {
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ function Modules() {
               }`}
             >
               <Card.Body>
-                <Card.Title className="text-center fw-bold">{module.name}</Card.Title>
+                <Card.Title className="text-center fw-bold"><BsGeoAlt className="me-2 text-info" size={24} /> {module.name}</Card.Title>
                 <Card.Text className="text-center">
                   {module.completed
                     ? `Módulo concluído. Nota: ${module.score}%`
