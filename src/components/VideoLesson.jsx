@@ -9,7 +9,7 @@ function VideoLesson({ videoUrl }) {
       <div
         className="container text-center"
         style={{
-          maxWidth: '960px', // Largura máxima maior para telas grandes
+          maxWidth: '962px', // Largura máxima maior para telas grandes
         }}
       >
         <h2 className="mb-2">Video Aula</h2>
