@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProgressBar, Card } from 'react-bootstrap';
 import { FaStar, FaRegStar } from 'react-icons/fa';
-import modules from '../data/modules';
 import { SlGraph } from "react-icons/sl";
 import { BsGeoAlt } from 'react-icons/bs';
+import { Button, Typography, Box } from '@mui/material';
+import modules from '../data/modules';
 
 function Modules() {
   const navigate = useNavigate();
@@ -50,29 +51,47 @@ function Modules() {
   };
 
   return (
-    <div className="container p-3 mod3  rounded my-5">
-      <div className='bg-success-subtle bg-gradient rounded p-4'>
-      <div className="text-center rounded  py-1 mb-4">
-        <h1 className="text-dark"> Dashboard <SlGraph /> Trilha Geografia</h1>
-        <div className="mt-3 w-75 mx-auto">
-          <p className="mb-1">Nota Geral</p>
-          <ProgressBar className=" mb-4 border border-success"
+    <div className="container p-3 mod3 rounded my-4 d-flex flex-column align-items-center">
+      <Box
+        className="bg-success-subtle bg-gradient rounded p-4 w-100"
+        textAlign="center"
+      >
+        <Typography
+          variant="h4"
+          component="h1"
+          fontWeight="bold"
+          color="textPrimary"
+          gutterBottom
+        >
+          Dashboard <SlGraph /> Trilha Geografia
+        </Typography>
+        <Box className="mt-3 w-75 mx-auto">
+          <Typography variant="body1" color="textSecondary" gutterBottom>
+            Nota Geral
+          </Typography>
+          <ProgressBar
+            className="mb-4 border border-success"
             now={isNaN(averageScore) ? 0 : averageScore}
             label={`${isNaN(averageScore) ? 0 : averageScore}%`}
           />
-        </div>
-      </div>
-
-      <div className="row mt-4">
+        </Box>
+      </Box>
+  
+      <div className="row mt-4 bg-success-subtle bg-gradient rounded p-4 justify-content-center w-100">
         {progressModules.map((module) => (
-          <div key={module.id} className="col-md-6 mb-4">
+          <div
+            key={module.id}
+            className="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex justify-content-center"
+          >
             <Card
-              className={`shadow-sm test-dark ${
+              className={`shadow-sm ${
                 module.completed ? 'border-success' : 'border-info'
-              }`}
+              } w-100`}
             >
               <Card.Body>
-                <Card.Title className="text-center fw-bold"><BsGeoAlt className="me-2 text-info" size={24} /> {module.name}</Card.Title>
+                <Card.Title className="text-center fw-bold">
+                  <BsGeoAlt className="me-2 text-info" size={24} /> {module.name}
+                </Card.Title>
                 <Card.Text className="text-center">
                   {module.completed
                     ? `Módulo concluído. Nota: ${module.score}%`
@@ -85,39 +104,45 @@ function Modules() {
                     <FaRegStar size={24} className="text-muted" />
                   )}
                 </div>
-                <div className="d-flex justify-content-center mt-3">
-                  <button
-                    className={`btn  fw-bold ${
-                      module.completed ? 'btn-outline-success' : 'btn-success'
-                    } me-2`}
+                <div className="d-flex justify-content-center gap-3 mt-3">
+                  <Button
+                    variant={module.completed ? 'outlined' : 'contained'}
+                    color="success"
                     onClick={() =>
                       module.completed
-                        ? handleReview(module.id) // Navega para a revisão
-                        : navigate(`/game/${module.id}`) // Navega para o jogo
+                        ? handleReview(module.id)
+                        : navigate(`/game/${module.id}`)
                     }
                   >
                     {module.completed ? 'Revisar' : 'Começar'}
-                  </button>
-                  <button
-                    className="btn fw-bold btn-outline-danger"
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="error"
                     onClick={() => resetModuleProgress(module.id)}
                   >
                     Reiniciar
-                  </button>
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
           </div>
         ))}
       </div>
-
-      <div className="text-center mt-5">
-        <button className="btn btn-secondary btn-lg me-3" onClick={() => navigate('/')}>Voltar à Home</button>
-      </div>
-
-      </div>
+  
+      <Box textAlign="center" mt={5}>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={() => navigate('/')}
+        >
+          Voltar à Home
+        </Button>
+      </Box>
     </div>
   );
+  
 }
 
 export default Modules;

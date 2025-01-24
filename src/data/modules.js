@@ -165,6 +165,61 @@ const modulesData = [
         },
       ],
     },
+
+    {
+      id: 4,
+      name: 'Cartografia',
+      videoUrl: 'https://www.youtube.com/embed/Elz_eZf_aaI?si=9tqDa7SZgfMo11vi', // Link para vídeo aula específica
+      questions: [
+        {
+          id: 1,
+          concept: 'A rotação da Terra é o movimento que o planeta realiza em torno de seu próprio eixo, resultando na alternância entre dia e noite.',
+          question: 'Quanto tempo a Terra leva para completar uma rotação em torno de seu eixo?',
+          answers: ['12 horas', '24 horas', '48 horas', '365 dias'],
+          correct: 1,
+        },
+        {
+          id: 2,
+          concept: 'As linhas imaginárias conhecidas como paralelos e meridianos formam a base para o sistema de coordenadas geográficas.',
+          question: 'Qual é o nome do paralelo que divide a Terra em hemisfério norte e sul?',
+          answers: ['Meridiano de Greenwich', 'Trópico de Câncer', 'Equador', 'Trópico de Capricórnio'],
+          correct: 2,
+        },
+        {
+          id: 3,
+          concept: 'Os fusos horários são definidos com base na rotação da Terra e na divisão do planeta em 24 zonas horárias.',
+          question: 'Quantos graus cada fuso horário cobre aproximadamente na superfície terrestre?',
+          answers: ['10 graus', '15 graus', '30 graus', '45 graus'],
+          correct: 1,
+        },
+        {
+          id: 4,
+          concept: 'A inclinação do eixo terrestre e o movimento de translação da Terra ao redor do Sol causam as estações do ano.',
+          question: 'Qual é o ângulo de inclinação do eixo terrestre em relação ao plano de sua órbita?',
+          answers: ['15 graus', '23,5 graus', '45 graus', '90 graus'],
+          correct: 1,
+        },
+        {
+          id: 5,
+          concept: 'O meridiano de Greenwich é a linha de longitude 0°, usada como referência para calcular fusos horários.',
+          question: 'Qual é o nome do fuso horário baseado no meridiano de Greenwich?',
+          answers: ['GMT (Greenwich Mean Time)', 'UTC (Universal Time Coordinated)', 'ZULU Time', 'Todos os anteriores'],
+          correct: 3,
+        },
+        {
+          id: 6,
+          concept: 'A linha internacional de mudança de data está localizada próxima ao meridiano oposto ao de Greenwich, a 180°.',
+          question: 'O que ocorre ao cruzar a linha internacional de mudança de data de oeste para leste?',
+          answers: [
+            'Adiciona-se um dia ao calendário',
+            'Subtrai-se um dia do calendário',
+            'O horário avança uma hora',
+            'O horário retrocede uma hora',
+          ],
+          correct: 1,
+        },
+      ],
+    }
     
   ];
   

@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 
-  background: linear-gradient(90deg, #d7e4e0, #ffffff, #d7e4e0);
+  background: #733e9d;
 }
 
 .card {
@@ -44,7 +44,7 @@ body {
   }
   
   .card-gradient {
-    background-image: url(/card15.png);
+    background-image: url(/cardfinal.png);
     background-size:contain; /* Ajusta a imagem para cobrir todo o card */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
