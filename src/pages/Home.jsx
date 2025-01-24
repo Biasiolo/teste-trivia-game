@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <Box
-      className="container d-flex justify-content-center align-items-center vh-100 bg-success-subtle bg-gradient"
+      className="container d-flex justify-content-center align-items-center vh-100 bg-light-subtle bg-gradient"
       textAlign="center"
     >
       <Box>
