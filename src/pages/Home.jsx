@@ -2,32 +2,51 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Box, Typography, Button } from '@mui/material';
 
 function Home() {
   const navigate = useNavigate(); // Hook para navegação
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100 bg-success-subtle bg-gradient">
-      <div className="text-center">
+    <Box
+      className="container d-flex justify-content-center align-items-center vh-100 bg-success-subtle bg-gradient"
+      textAlign="center"
+    >
+      <Box>
         {/* Adiciona o logo acima do título */}
         <img
           src="/semfundo.png" /* Caminho do logo */
           alt="BrainDex Logo"
-          className="mb-2" /* Margem inferior */
-          style={{ width: '248px', height: 'auto' }} /* Tamanho do logo */
+          className="mb-4"
+          style={{ width: '250px', height: 'auto' }} /* Tamanho do logo */
         />
-        <h1 className="display-4 fw-bold text-success">Bem-vindo ao BrainDex</h1>
-        <p className="lead text-secondary mt-4">
+        <Typography
+          variant="h3"
+          component="h1"
+          fontWeight="bold"
+          color="textPrimary"
+          gutterBottom
+        >
+          Bem-vindo ao BrainDex
+        </Typography>
+        <Typography
+          variant="h6"
+          component="p"
+          color="textSecondary"
+          className="mb-4"
+        >
           Explore trilhas de conhecimento interativas e divirta-se aprendendo!
-        </p>
-        <button
-          className="btn btn-success btn-lg mt-4 fw-bold"
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
           onClick={() => navigate('/modules')}
         >
           Explorar Trilha de Geografia
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 }
 

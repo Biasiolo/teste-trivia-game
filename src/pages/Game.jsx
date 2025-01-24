@@ -1,8 +1,9 @@
 // src/pages/Game.jsx
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, ProgressBar, Button, Table } from 'react-bootstrap';
+import { Container, Row, Col, ProgressBar, Table } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Box, Typography, Button } from '@mui/material';
 import Narrative from '../components/Narrative';
 import CardDeck from '../components/CardDeck';
 import VideoLesson from '../components/VideoLesson';
@@ -49,7 +50,7 @@ function Game() {
     const score = Math.round((correctAnswers / totalCards) * 100);
     module.completed = true;
     module.score = score;
-  
+
     // Salva o gabarito no localStorage
     const reviewData = {
       moduleId: module.id,
@@ -63,39 +64,53 @@ function Game() {
       reviewData,
     ];
     localStorage.setItem('reviews', JSON.stringify(updatedReviews));
-  
+
     // Atualiza o progresso do módulo
     const updatedModules = modules.map((mod) =>
       mod.id === module.id ? module : mod
     );
     localStorage.setItem('modules', JSON.stringify(updatedModules));
-  
+
     navigate('/modules');
   };
 
   return (
     <Container fluid className="d-flex flex-column bg-transparent px-4 vh-100">
-      <Row className="flex-grow-1 mt-3 ">
+      <Row className="flex-grow-1 mt-3">
         <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
               <Narrative message={`Bem-vindo à trilha ${module?.name || ''}!`} />
               <VideoLesson videoUrl={module?.videoUrl || ''} />
-              <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="w-50 mb-4 border border-success" />
+              <Box className="w-50 mb-4">
+                <ProgressBar
+                  now={progress}
+                  label={`${Math.round(progress)}%`}
+                  className="border border-success"
+                />
+              </Box>
             </>
           ) : (
-            <div className="text-center">
-              <h2 className="display-5 mb-3 fw-bold">Módulo Concluído!</h2>
-              <p className="text-success fs-3 mb-0 fw-bold">
+            <Box textAlign="center" className="mt-4">
+              <Typography variant="h4" fontWeight="bold" color="textPrimary">
+                Módulo Concluído!
+              </Typography>
+              <Typography variant="h5" color="success.main" fontWeight="bold">
                 Acertos: {correctAnswers}
-              </p>
-              <p className="text-danger fs-4  fw-bold">
+              </Typography>
+              <Typography variant="h6" color="error.main" fontWeight="bold">
                 Erros: {totalCards - correctAnswers}
-              </p>
-
-              {/* Gabarito */}
-              <h3 className="mt-4">Gabarito</h3>
-              <Table striped borderless hover responsive className="mt-3 table-success fs-5 justify-content-center">
+              </Typography>
+              <Typography variant="h5" className="mt-4" color="textSecondary">
+                Gabarito
+              </Typography>
+              <Table
+                striped
+                borderless
+                hover
+                responsive
+                className="mt-3 table-success fs-5"
+              >
                 <thead className="table-warning">
                   <tr>
                     <th>#</th>
@@ -110,31 +125,42 @@ function Game() {
                       <td>{index + 1}</td>
                       <td>{q.question}</td>
                       <td>{q.answers[q.correct]}</td>
-                      <td className={q.isCorrect ? 'text-success' : 'text-danger'}>
+                      <td
+                        className={q.isCorrect ? 'text-success' : 'text-danger'}
+                      >
                         {q.isCorrect ? 'Correto' : 'Errado'}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </Table>
-
-              <Button variant="success" className="mt-4" onClick={updateModuleProgress}>
+              <Button
+                variant="contained"
+                color="success"
+                size="large"
+                className="mt-4"
+                onClick={updateModuleProgress}
+              >
                 Voltar aos Módulos
               </Button>
-            </div>
+            </Box>
           )}
         </Col>
       </Row>
       {cards.length > 0 && (
-        <Row className='mb-3 bg-transparent bg-gradient ' >
-          <Col className='deck3 rounded' >
+        <Row className="mb-3 bg-transparent bg-gradient">
+          <Col className="deck3 rounded">
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
-          <div className='justify-content-center text-center my-3 ' >
-          <Button variant="outline-success" onClick={() => navigate('/modules')}>
-                    Voltar aos Módulos
-                  </Button>
-          </div>
+          <Box textAlign="center" className="my-3">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/modules')}
+            >
+              Voltar aos Módulos
+            </Button>
+          </Box>
         </Row>
       )}
     </Container>

@@ -22,7 +22,10 @@ body {
   }
 
   .body-card {
-    background-color: #fffbda;
+    background-color: #fafafa;
+  }
+  .modal-head, .modal-foot {
+    background-color: #733e9d;
   }
 
   .button-hover-dark:hover {
