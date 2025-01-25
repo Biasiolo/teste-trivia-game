@@ -169,55 +169,65 @@ const modulesData = [
     {
       id: 4,
       name: 'Cartografia',
-      videoUrl: 'https://www.youtube.com/embed/Elz_eZf_aaI?si=9tqDa7SZgfMo11vi', // Link para vídeo aula específica
+      videoUrl: 'https://www.youtube.com/embed/ZI2GIWgxiG4?si=8-Hv3M6spbIcpm4N', // Link para vídeo aula específica
       questions: [
         {
           id: 1,
-          concept: 'A rotação da Terra é o movimento que o planeta realiza em torno de seu próprio eixo, resultando na alternância entre dia e noite.',
-          question: 'Quanto tempo a Terra leva para completar uma rotação em torno de seu eixo?',
-          answers: ['12 horas', '24 horas', '48 horas', '365 dias'],
-          correct: 1,
+          concept: 'A cartografia é a ciência que estuda e representa graficamente o espaço geográfico por meio de mapas, cartas e plantas.',
+          question: 'Qual é o principal elemento que define a escala de um mapa?',
+          answers: ['Projeção Cartográfica', 'Título', 'Legenda', 'Relação entre distância real e no mapa'],
+          correct: 3,
         },
         {
           id: 2,
-          concept: 'As linhas imaginárias conhecidas como paralelos e meridianos formam a base para o sistema de coordenadas geográficas.',
-          question: 'Qual é o nome do paralelo que divide a Terra em hemisfério norte e sul?',
-          answers: ['Meridiano de Greenwich', 'Trópico de Câncer', 'Equador', 'Trópico de Capricórnio'],
+          concept: 'As projeções cartográficas são métodos utilizados para transferir a superfície esférica da Terra para um plano.',
+          question: 'Qual projeção é mais adequada para representar as áreas próximas ao Equador com mínima deformação?',
+          answers: ['Projeção de Mercator', 'Projeção Cônica', 'Projeção Cilíndrica Equidistante', 'Projeção Azimutal'],
           correct: 2,
         },
         {
           id: 3,
-          concept: 'Os fusos horários são definidos com base na rotação da Terra e na divisão do planeta em 24 zonas horárias.',
-          question: 'Quantos graus cada fuso horário cobre aproximadamente na superfície terrestre?',
-          answers: ['10 graus', '15 graus', '30 graus', '45 graus'],
-          correct: 1,
+          concept: 'Os mapas apresentam diferentes tipos de escalas que determinam o nível de detalhamento da representação.',
+          question: 'Um mapa com escala 1:50.000 é considerado:',
+          answers: ['Mapa de grande escala', 'Mapa de pequena escala', 'Mapa temático', 'Mapa topográfico detalhado'],
+          correct: 0,
         },
         {
           id: 4,
-          concept: 'A inclinação do eixo terrestre e o movimento de translação da Terra ao redor do Sol causam as estações do ano.',
-          question: 'Qual é o ângulo de inclinação do eixo terrestre em relação ao plano de sua órbita?',
-          answers: ['15 graus', '23,5 graus', '45 graus', '90 graus'],
-          correct: 1,
+          concept: 'As escalas em um mapa são responsáveis por indicar a relação entre as dimensões reais e as representadas graficamente.',
+          question: 'Um mapa com escala 1:1.000.000 apresenta um maior nível de detalhamento que um mapa com escala 1:10.000.',
+          answers: ['Verdadeiro', 'Falso'],
+          correct: 1, // "Falso" é correto porque a escala 1:10.000 oferece maior detalhamento.
         },
         {
           id: 5,
-          concept: 'O meridiano de Greenwich é a linha de longitude 0°, usada como referência para calcular fusos horários.',
-          question: 'Qual é o nome do fuso horário baseado no meridiano de Greenwich?',
-          answers: ['GMT (Greenwich Mean Time)', 'UTC (Universal Time Coordinated)', 'ZULU Time', 'Todos os anteriores'],
-          correct: 3,
+          concept: 'A orientação nos mapas é garantida por elementos como a rosa-dos-ventos e as linhas imaginárias como os paralelos e meridianos.',
+          question: 'Qual é a direção convencionalmente apontada para o topo dos mapas?',
+          answers: ['Sul', 'Norte', 'Leste', 'Oeste'],
+          correct: 1,
         },
         {
           id: 6,
-          concept: 'A linha internacional de mudança de data está localizada próxima ao meridiano oposto ao de Greenwich, a 180°.',
-          question: 'O que ocorre ao cruzar a linha internacional de mudança de data de oeste para leste?',
-          answers: [
-            'Adiciona-se um dia ao calendário',
-            'Subtrai-se um dia do calendário',
-            'O horário avança uma hora',
-            'O horário retrocede uma hora',
-          ],
+          concept: 'As legendas dos mapas são fundamentais para decodificar os símbolos e informações representadas.',
+          question: 'O que geralmente é representado por cores no mapa físico?',
+          answers: ['Limites políticos', 'Altitudes e profundidades', 'Fronteiras culturais', 'Rotas comerciais'],
           correct: 1,
         },
+        {
+          id: 7,
+          concept: 'A projeção de Mercator é amplamente usada em navegação, mas distorce áreas próximas aos polos.',
+          question: 'Qual problema está associado à projeção de Mercator?',
+          answers: ['Distorção de áreas nos polos', 'Imprecisão na escala de cores', 'Incapacidade de representar paralelos', 'Erro na localização de meridianos'],
+          correct: 0,
+        },
+        {
+          id: 8,
+          concept: 'Os paralelos e meridianos são linhas imaginárias utilizadas para formar o sistema de coordenadas geográficas, ajudando a localizar qualquer ponto na superfície terrestre.',
+          question: 'Os paralelos são linhas imaginárias que conectam os polos norte e sul.',
+          answers: ['Verdadeiro', 'Falso'],
+          correct: 1, // "Falso" é correto porque os paralelos são linhas horizontais que circulam a Terra.
+        },
+        
       ],
     }
     

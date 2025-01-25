@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProgressBar, Card } from 'react-bootstrap';
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 import { SlGraph } from "react-icons/sl";
 import { BsGeoAlt } from 'react-icons/bs';
 import { Button, Typography, Box } from '@mui/material';
@@ -50,6 +50,21 @@ function Modules() {
     }
   };
 
+  // Função para renderizar estrelas baseadas na pontuação
+  const renderStars = (score) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (score >= i * 20) {
+        stars.push(<FaStar key={i} className="text-warning" size={20} />);
+      } else if (score >= (i - 1) * 20 + 10) {
+        stars.push(<FaStarHalfAlt key={i} className="text-warning" size={20} />);
+      } else {
+        stars.push(<FaRegStar key={i} className="text-muted" size={20} />);
+      }
+    }
+    return stars;
+  };
+
   return (
     <div className="container p-3 mod3 rounded my-4 d-flex flex-column align-items-center">
       <Box
@@ -60,23 +75,23 @@ function Modules() {
           variant="h4"
           component="h1"
           fontWeight="bold"
-          color="textPrimary"
+          color="#34283c"
           gutterBottom
         >
           Dashboard <SlGraph /> Trilha Geografia
         </Typography>
         <Box className="mt-3 w-75 mx-auto">
-          <Typography variant="body1" color="textSecondary" gutterBottom>
+          <Typography variant="body1" color="#34283c" gutterBottom>
             Nota Geral
           </Typography>
           <ProgressBar
-            className="mb-4 border border-success"
+            className="mb-4 border border-info"
             now={isNaN(averageScore) ? 0 : averageScore}
             label={`${isNaN(averageScore) ? 0 : averageScore}%`}
           />
         </Box>
       </Box>
-  
+
       <div className="row mt-4 bg-success-subtle bg-gradient rounded p-4 justify-content-center w-100">
         {progressModules.map((module) => (
           <div
@@ -84,30 +99,24 @@ function Modules() {
             className="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex justify-content-center"
           >
             <Card
-              className={`shadow-sm ${
-                module.completed ? 'border-success' : 'border-info'
-              } w-100`}
+              className={`shadow-sm ${module.completed ? 'border-success' : ''} w-100`}
             >
               <Card.Body>
-                <Card.Title className="text-center fw-bold">
+                <Card.Title className="text-center text-dark fw-bold">
                   <BsGeoAlt className="me-2 text-info" size={24} /> {module.name}
                 </Card.Title>
-                <Card.Text className="text-center">
+                <Card.Text className="text-center text-secondary">
                   {module.completed
                     ? `Módulo concluído. Nota: ${module.score}%`
                     : 'Ainda não iniciado.'}
                 </Card.Text>
                 <div className="d-flex justify-content-center">
-                  {module.completed ? (
-                    <FaStar size={24} className="text-warning" />
-                  ) : (
-                    <FaRegStar size={24} className="text-muted" />
-                  )}
+                  {renderStars(module.score)} {/* Renderiza estrelas com base na pontuação */}
                 </div>
                 <div className="d-flex justify-content-center gap-3 mt-3">
                   <Button
                     variant={module.completed ? 'outlined' : 'contained'}
-                    color="success"
+                    color="primary"
                     onClick={() =>
                       module.completed
                         ? handleReview(module.id)
@@ -129,7 +138,7 @@ function Modules() {
           </div>
         ))}
       </div>
-  
+
       <Box textAlign="center" mt={5}>
         <Button
           variant="contained"
@@ -142,7 +151,6 @@ function Modules() {
       </Box>
     </div>
   );
-  
 }
 
 export default Modules;
