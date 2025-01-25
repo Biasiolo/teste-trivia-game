@@ -6,12 +6,18 @@ import { Alert } from 'react-bootstrap';
 function Narrative({ messages }) {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [showAlert, setShowAlert] = useState(true); // Controle para exibir o alerta
+  const [fadeClass, setFadeClass] = useState('fade-in'); // Controle de transição
 
   useEffect(() => {
     if (currentMessageIndex < messages.length - 1) {
       const interval = setInterval(() => {
-        setCurrentMessageIndex((prevIndex) => prevIndex + 1);
-      }, 3500); // Alterna a cada 4 segundos
+        // Troca para fade-out antes de mudar a mensagem
+        setFadeClass('fade-out');
+        setTimeout(() => {
+          setCurrentMessageIndex((prevIndex) => prevIndex + 1);
+          setFadeClass('fade-in'); // Volta para fade-in na nova mensagem
+        }, 500); // Duração do fade-out
+      }, 3600); // Tempo total por mensagem
 
       return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
     } else {
@@ -24,19 +30,14 @@ function Narrative({ messages }) {
   return (
     <div className="narrative-container">
       {showAlert ? (
-        <Alert variant="transparent" className="text-center text-light fs-5">
-          {currentMessageIndex === messages.length - 1 ? (
-            <p>{messages[currentMessageIndex]}</p>
-          ) : (
-            messages[currentMessageIndex]
-          )}
+        <Alert
+          variant="transparent"
+          className={`text-center text-light fs-5 narrative-message ${fadeClass}`}
+        >
+          {messages[currentMessageIndex]}
         </Alert>
       ) : (
-        <img
-          src="/semfundo.png"
-          alt="Logo"
-          className="narrative-logo"
-        />
+        <img src="/semfundo.png" alt="Logo" className="narrative-logo" />
       )}
     </div>
   );

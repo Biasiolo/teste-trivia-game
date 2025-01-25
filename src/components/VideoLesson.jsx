@@ -9,7 +9,7 @@ function VideoLesson({ videoUrl }) {
       <div
         className="container text-center"
         style={{
-          maxWidth: '962px', // Largura máxima maior para telas grandes
+          maxWidth: '962px', 
         }}
       >
         <div>
@@ -19,11 +19,11 @@ function VideoLesson({ videoUrl }) {
             allowFullScreen
             frameBorder="0"
             style={{
-                maxWidth: '960px', // Largura máxima maior para desktops
+                maxWidth: '960px', 
                 width: '80vw',
-                height: '40vh', // Adapta altura automaticamente
-                border: '2px solid #ddd', // Bordas mais destacadas
-                borderRadius: '12px', // Bordas arredondadas mais suaves
+                height: '40vh', 
+                border: '2px solid #ddd', 
+                borderRadius: '12px', 
                 overflow: 'hidden',
               }}
           ></iframe>

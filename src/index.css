@@ -81,8 +81,20 @@ body {
   }
 
   .narrative-container {
-
     min-height: 104px; /* Altura mínima para manter consistência */
+    transition: all ease-in-out;
+  }
+  
+  .narrative-message {
+    transition: opacity 0.7s ease-in-out; /* Duração da transição */
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
   }
   
   .narrative-logo {
@@ -91,7 +103,7 @@ body {
     animation: fadeIn 1.5s ease-in-out;
   }
   
-  /* Animação opcional para o logo */
+  /* Animação para o logo */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -103,4 +115,3 @@ body {
     }
   }
   
-
