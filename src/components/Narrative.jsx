@@ -32,7 +32,7 @@ function Narrative({ messages }) {
       {showAlert ? (
         <Alert
           variant="transparent"
-          className={`text-center text-light fs-5 narrative-message ${fadeClass}`}
+          className={`text-center text-light fs-5 mb-0 narrative-message ${fadeClass}`}
         >
           {messages[currentMessageIndex]}
         </Alert>

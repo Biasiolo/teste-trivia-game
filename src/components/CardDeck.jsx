@@ -10,21 +10,21 @@ function CardDeck({ cards, onAnswer }) {
 
   return (
 
-      <div className="card-deck1 rounded d-flex flex-column align-items-center py-4 my-3">
+      <div className="card-deck1 rounded d-flex flex-column align-items-center py-3 my-3">
       {/* Título centralizado acima dos cards */}
-      <h3 className="text-center text-dark mb-4 fs-4 fw-bold deck-title">RESPONDA AOS CARDS ABAIXO:</h3>
-      <div className="d-flex justify-content-center flex-wrap">
+      <h3 className="text-center my-2 fw-bold deck-title">RESPONDA AOS CARDS ABAIXO</h3>
+      <div className="d-flex justify-content-center pt-1 flex-wrap">
         {cards.map((card) => (
           <Card
             key={card.id}
-            className="m-2 card1 text-dark p-1"
+            className="m-2 card1 p-1"
 
             onClick={() => setSelectedCard(card)}
           >
             <Card.Body className="d-flex align-items-center justify-content-center card-gradient">
               
             </Card.Body>
-            <Card.Title className="text-center mt-2 text-dark deck-title">{`${card.id}`}</Card.Title>
+            <Card.Title className="text-center mt-2 deck-title2">{`${card.id}`}</Card.Title>
           </Card>
         ))}
       </div>

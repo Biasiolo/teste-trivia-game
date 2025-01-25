@@ -88,7 +88,7 @@ function Game() {
                 'Tudo pronto?',
                 'Boa sorte!',
               ]} />
-              <VideoLesson videoUrl={module?.videoUrl || ''} />
+              <VideoLesson videoUrl={module?.videoUrl || ''} moduleName={module?.name || ''} />
               <Box className="w-50 mb-4">
                 <ProgressBar
                   now={progress}

@@ -11,107 +11,124 @@ body {
 .btnhome {
   background-color: #733e9d;
 }
+
 .card {
-    transition: all 0.5s ease-in-out;
-    cursor: pointer;
-  }
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
 
-  .card-deck1 {
-    background: linear-gradient(90deg,  #a3e6d2, #bfe9de, #ceeee5, #bfe9de, #a3e6d2); /* Gradiente com tons de amarelo */
-  }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .body-card {
-    background-color: #fafafa;
-  }
-  .modal-head, .modal-foot {
-    background-color: #733e9d;
-  }
 
-  .button-hover-dark:hover {
-    color: #212529 !important; /* Cor do texto dark */
-  }
+.card-deck1 {
+  background: linear-gradient(90deg, #a3e6d2, #bfe9de, #ceeee5, #bfe9de, #a3e6d2);
+}
 
-  .button-selected {
-    color: #212529 !important; /* Cor do texto dark */
-  }
+.body-card {
+  background-color: #fafafa;
+}
 
-  .modal-backdrop.show {
-    background-color: rgb(3, 3, 3) !important; /* Fundo mais escuro */
-  }
+.modal-head,
+.modal-foot {
+  background-color: #733e9d;
+}
 
-  .card1 {
-    background: transparent;
-    border: none;
+.button-hover-dark:hover {
+  color: #212529 !important;
+}
 
-  }
-  
-  .card-gradient {
-    background-image: url(/cardfinal.png);
-    background-size:contain; /* Ajusta a imagem para cobrir todo o card */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    padding: 16px;
+.button-selected {
+  color: #212529 !important;
+}
 
-    box-shadow: 0 4px 6px rgba(88, 88, 88, 0.3);
-    cursor: pointer;
-    width: 88px;
-    height: 120px;
-    border-radius: 12px;
+.modal-backdrop.show {
+  background-color: rgb(3, 3, 3) !important;
+}
+
+.card1 {
+  background: transparent;
+  border: none;
+
+}
+
+.card-gradient {
+  background-image: url(/cardfinal.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px;
+
+  box-shadow: 0 4px 6px rgba(88, 88, 88, 0.3);
+  cursor: pointer;
+  width: 88px;
+  height: 120px;
+  border-radius: 12px;
 }
 
 
 .deck3 {
-  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2 );
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mod3 {
-  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2 );
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  background: radial-gradient(circle, #ad43a4, #4A90E2, #50E3C2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
-  .deck-title {
-    text-shadow: 1px 2px 1px rgba(242, 250, 250, 0.3); /* Sombra clara */
+.deck-title {
+  text-shadow: 1px 2px 1px rgba(242, 250, 250, 0.3);
+  font-size: 1.1rem;
+  color: #38393b;
+}
+
+.deck-title2 {
+  text-shadow: 1px 2px 1px rgba(242, 250, 250, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #38393b;
+}
+
+.narrative-container {
+  min-height: 104px; /* Altura mínima */
+  display: flex; /* Habilita o Flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  transition: all 0.3s ease-in-out; /* Suaviza transições */
+}
+
+.narrative-message {
+  transition: opacity 0.7s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.narrative-logo {
+  width: 88px;
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animação para o logo */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
   }
 
-  .narrative-container {
-    min-height: 120px; /* Altura mínima para manter consistência */
-    transition: all ease-in-out;
-  }
-  
-  .narrative-message {
-    transition: opacity 0.7s ease-in-out; /* Duração da transição */
-  }
-  
-  .fade-in {
+  to {
     opacity: 1;
+    transform: scale(1);
   }
-  
-  .fade-out {
-    opacity: 0;
-  }
-  
-  .narrative-logo {
-    width: 88px; /* Tamanho do logo */
-    height: auto;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  /* Animação para o logo */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
-  
+}
