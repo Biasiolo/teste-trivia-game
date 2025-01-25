@@ -99,7 +99,7 @@ function Modules() {
             className="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex justify-content-center"
           >
             <Card
-              className={`shadow-sm ${module.completed ? 'border-success' : ''} w-100`}
+              className={`shadow-sm ${module.completed ? 'border-info' : ''} w-100`}
             >
               <Card.Body>
                 <Card.Title className="text-center text-dark fw-bold">

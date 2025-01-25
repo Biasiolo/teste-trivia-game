@@ -95,10 +95,10 @@ function Game() {
               <Typography variant="h4" fontWeight="bold" color="textPrimary">
                 Módulo Concluído!
               </Typography>
-              <Typography variant="h5" color="success.main" fontWeight="bold">
+              <Typography variant="h5" color="#2afd00" fontWeight="bold">
                 Acertos: {correctAnswers}
               </Typography>
-              <Typography variant="h6" color="error.main" fontWeight="bold">
+              <Typography variant="h6" color="#b9fc00" fontWeight="bold">
                 Erros: {totalCards - correctAnswers}
               </Typography>
               <Typography variant="h5" className="mt-4" color="textSecondary">
@@ -109,7 +109,7 @@ function Game() {
                 borderless
                 hover
                 responsive
-                className="mt-3 table-success fs-5"
+                className="mt-3 table-success fs-6"
               >
                 <thead className="table-warning">
                   <tr>
