@@ -81,7 +81,7 @@ body {
   }
 
   .narrative-container {
-    min-height: 112px; /* Altura mínima para manter consistência */
+    min-height: 120px; /* Altura mínima para manter consistência */
     transition: all ease-in-out;
   }
   
