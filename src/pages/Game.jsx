@@ -80,7 +80,13 @@ function Game() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
-              <Narrative message={`Bem-vindo à trilha ${module?.name || ''}!`} />
+              <Narrative messages={[
+                `Bem-vindo à trilha ${module?.name || ''}!`,
+                'Assista à videoaula para começar.',
+                'Responda aos cards e obtenha sua pontuação.',
+                'Revise sua performance na página de módulos.',
+                'Boa sorte!',
+              ]} />
               <VideoLesson videoUrl={module?.videoUrl || ''} />
               <Box className="w-50 mb-4">
                 <ProgressBar

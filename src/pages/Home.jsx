@@ -39,9 +39,15 @@ function Home() {
         </Typography>
         <Button
           variant="contained"
-          color="primary"
           size="large"
           onClick={() => navigate('/modules')}
+          sx={{
+            backgroundColor: '#6A0DAD', // Cor roxa
+            color: '#fff', // Texto branco
+            '&:hover': {
+              backgroundColor: '#580A9E', // Tom mais escuro ao hover
+            },
+          }}
         >
           Explorar Trilha de Geografia
         </Button>
