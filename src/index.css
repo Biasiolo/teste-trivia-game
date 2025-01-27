@@ -59,6 +59,10 @@ body {
 
 }
 
+.resposta {
+  font-size: 1.05rem !important;
+}
+
 .card-gradient {
   background-image: url(/cardfinal.png);
   background-size: contain;

@@ -49,6 +49,7 @@ function CardModal({ card, onClose, onAnswer }) {
         <Stack spacing={2} className="mt-3 text-dark">
           {card.answers.map((answer, index) => (
             <Button
+            className="resposta"
               key={index}
               variant={selected === index ? 'contained' : 'outlined'}
               color="primary"
