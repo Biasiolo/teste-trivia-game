@@ -145,7 +145,9 @@ function Modules() {
           color="primary"
           size="large"
           onClick={() => navigate('/')}
+          
         >
+          
           Voltar à Home
         </Button>
       </Box>

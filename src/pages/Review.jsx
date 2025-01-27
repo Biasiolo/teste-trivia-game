@@ -3,6 +3,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Table, Button } from 'react-bootstrap';
+import { Typography } from '@mui/material';
 
 function Review() {
   const { moduleId } = useParams();
@@ -26,13 +27,16 @@ function Review() {
   }
 
   return (
-    <div className="container p-4 flex-column d-flex justify-content-center align-items-center text-center">
-      <h1 className="display-4 fw-bold text-primary text-center mb-4">{reviewData.moduleName}</h1>
-      <h2 className="text-success text-center mb-4 fw-bold">Nota: {reviewData.score}%</h2>
+    <div className="container mt-5 p-4 flex-column d-flex justify-content-center align-items-center text-center">
+      <h1 className="display-4 fw-bold text-dark text-center mb-4">{reviewData.moduleName}</h1>
+      <Typography variant="h5" color="#2afd00" fontWeight="bold">
+      <h2 className="text-center mb-4 fw-bold">Nota: {reviewData.score}%</h2>
+              </Typography>
+      
 
-      <h3 className="mt-4">Gabarito</h3>
+      <h3 className="mt-4 text-info">Gabarito</h3>
       <Table striped borderless hover responsive  className="mt-3 table-success fs-6 justify-content-center">
-                      <thead className="table-warning">
+                      <thead className="table-primary">
           <tr>
             <th>#</th>
             <th>Pergunta</th>
@@ -56,7 +60,7 @@ function Review() {
       </Table>
 
       <div className="text-center mt-4">
-        <Button variant="success" onClick={() => navigate('/modules')}>
+        <Button variant="primary" onClick={() => navigate('/modules')}>
           Voltar aos Módulos
         </Button>
       </div>

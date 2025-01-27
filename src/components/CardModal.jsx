@@ -15,7 +15,7 @@ function CardModal({ card, onClose, onAnswer }) {
   return (
     <Modal show onHide={onClose} centered size="lg">
       <Modal.Header closeButton className="modal-head">
-        <Typography variant="h5" component="div" className="fw-bold text-primary">
+        <Typography variant="h5" component="div" className="fw-bold text-info">
           {`Pergunta ${card.id}`}
         </Typography>
       </Modal.Header>

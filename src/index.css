@@ -3,7 +3,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(90deg, #733e9d, #854db3, #9766be, #854db3, #733e9d);
+  background: linear-gradient(90deg, 
+  hsl(273, 43%, 43%), 
+  hsl(273, 43%, 48%), 
+  hsl(273, 43%, 53%), 
+  hsl(273, 43%, 48%), 
+  hsl(273, 43%, 43%));
 
 }
 
@@ -28,12 +33,12 @@ body {
 }
 
 .body-card {
-  background-color: #fafafa;
+  background-color: #fdfdfd;
 }
 
 .modal-head,
 .modal-foot {
-  background-color: #733e9d;
+  background-color: hsl(273, 43%, 43%);
 }
 
 .button-hover-dark:hover {

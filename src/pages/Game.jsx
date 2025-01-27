@@ -118,7 +118,7 @@ function Game() {
                 responsive
                 className="mt-3 table-success fs-6"
               >
-                <thead className="table-warning">
+                <thead className="table-primary">
                   <tr>
                     <th>#</th>
                     <th>Pergunta</th>
@@ -143,7 +143,7 @@ function Game() {
               </Table>
               <Button
                 variant="contained"
-                color="success"
+                color="primary"
                 size="large"
                 className="mt-4"
                 onClick={updateModuleProgress}
@@ -159,7 +159,7 @@ function Game() {
           <Col className="deck3 rounded">
             <CardDeck cards={cards} onAnswer={handleAnswer} />
           </Col>
-          <Box textAlign="center" className="my-3">
+          <Box textAlign="center" className="my-4">
             <Button
               variant="contained"
               color="primary"
