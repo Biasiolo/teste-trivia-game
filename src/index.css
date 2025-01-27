@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: linear-gradient(90deg, #733e9d, #9766be, #9766be, #9766be, #733e9d);
 
-  background: #733e9d;
 }
 
 
@@ -24,7 +24,7 @@ body {
 
 
 .card-deck1 {
-  background: linear-gradient(90deg, #a3e6d2, #bfe9de, #ceeee5, #bfe9de, #a3e6d2);
+  background: linear-gradient(90deg, #b1e1e7, #c8eceb, #ceeeec, #c8eceb, #b1e1e7);
 }
 
 .body-card {

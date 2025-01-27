@@ -68,7 +68,7 @@ function Modules() {
   return (
     <div className="container p-3 mod3 rounded my-4 d-flex flex-column align-items-center">
       <Box
-        className="bg-success-subtle bg-gradient rounded p-4 w-100"
+        className="bg-light bg-gradient rounded p-4 w-100"
         textAlign="center"
       >
         <Typography
@@ -92,7 +92,7 @@ function Modules() {
         </Box>
       </Box>
 
-      <div className="row mt-4 bg-success-subtle bg-gradient rounded p-4 justify-content-center w-100">
+      <div className="row mt-4 bg-light bg-gradient rounded p-4 justify-content-center w-100">
         {progressModules.map((module) => (
           <div
             key={module.id}
