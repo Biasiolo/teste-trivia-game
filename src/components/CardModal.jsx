@@ -25,9 +25,25 @@ function CardModal({ card, onClose, onAnswer }) {
           <Typography variant="body1" color="textSecondary" className="mb-2">
             {card.concept}
           </Typography>
-          <Typography variant="h6" fontWeight="bold" color="textPrimary">
-            {card.question}
-          </Typography>
+
+          {/* Renderizando as linhas da pergunta */}
+          {Array.isArray(card.question) ? (
+            card.question.map((line, index) => (
+              <Typography
+                key={index}
+                variant="body1"
+                fontWeight={index === 0 ? 'bold' : 'normal'}
+                color="textPrimary"
+                gutterBottom
+              >
+                {line}
+              </Typography>
+            ))
+          ) : (
+            <Typography variant="h6" fontWeight="bold" color="textPrimary">
+              {card.question}
+            </Typography>
+          )}
         </Box>
 
         <Stack spacing={2} className="mt-3 text-dark">
@@ -82,7 +98,10 @@ CardModal.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.number.isRequired,
     concept: PropTypes.string.isRequired, // Adicionado conceito
-    question: PropTypes.string.isRequired,
+    question: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
     answers: PropTypes.arrayOf(PropTypes.string).isRequired,
     correct: PropTypes.number.isRequired,
   }).isRequired,

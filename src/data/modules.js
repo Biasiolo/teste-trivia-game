@@ -50,18 +50,22 @@ const modulesData = [
       {
         id: 5,
         concept: 'A escala geográfica permite analisar fenômenos em diferentes níveis espaciais, como local, regional, nacional e global.',
-        question: 'Associe os fenômenos às escalas geográficas correspondentes:\n' +
-          '1. Desmatamento na Amazônia.\n' +
-          '2. Tráfego em uma cidade.\n' +
-          '3. Aquecimento global.\n\n' +
-          'Escolha a sequência correta:\n' +
-          '(A) Local - Regional - Global\n' +
-          '(B) Regional - Local - Global\n' +
-          '(C) Global - Local - Regional\n' +
+        question: [
+          'Associe os fenômenos às escalas geográficas correspondentes:',
+          '1. Desmatamento na Amazônia.',
+          '2. Tráfego em uma cidade.',
+          '3. Aquecimento global.',
+          '',
+          'Escolha a sequência correta:',
+          '(A) Local - Regional - Global',
+          '(B) Regional - Local - Global',
+          '(C) Global - Local - Regional',
           '(D) Local - Global - Regional',
+        ],
         answers: ['A', 'B', 'C', 'D'],
         correct: 1, // (B) Regional - Local - Global
       },
+      
       {
         id: 6,
         concept: 'A região é definida como uma área com características homogêneas, delimitada para fins de análise ou organização.',
@@ -156,15 +160,17 @@ const modulesData = [
       {
         id: 8,
         concept: 'A tectônica de placas influencia diretamente a formação de relevo e a ocorrência de desastres naturais.',
-        question: 'Associe corretamente os tipos de limites tectônicos aos fenômenos abaixo:\n\n' +
-          '1. Vulcões.\n' +
-          '2. Terremotos em falhas transformantes.\n' +
-          '3. Formação de novas crostas oceânicas.\n\n' +
-          'Escolha a sequência correta:\n' +
-          '(A) Convergente - Transformante - Divergente\n' +
-          '(B) Divergente - Convergente - Transformante\n' +
-          '(C) Transformante - Divergente - Convergente\n' +
+        question: [
+          'Associe corretamente os tipos de limites tectônicos aos fenômenos abaixo:',
+          '1. Vulcões.',
+          '2. Terremotos em falhas transformantes.',
+          '3. Formação de novas crostas oceânicas.',
+          'Escolha a sequência correta:',
+          '(A) Convergente - Transformante - Divergente',
+          '(B) Divergente - Convergente - Transformante',
+          '(C) Transformante - Divergente - Convergente',
           '(D) Convergente - Divergente - Transformante',
+        ],
         answers: ['A', 'B', 'C', 'D'],
         correct: 0, // Convergente - Transformante - Divergente
       },
