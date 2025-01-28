@@ -142,13 +142,14 @@ function Modules() {
                 <div className="d-flex justify-content-center gap-3 mt-3">
                 <Button
                     variant="outlined"
-                    color="error"
+                    color="secondary"
                     size="small"
+
                     sx={{
                       borderRadius: '24px',
                       width: '92px',
                       textTransform: 'none',
-                      fontWeight: 'bold',
+                      fontWeight:'bold',
                     }}
                     onClick={() => resetModuleProgress(module.id)}
                   >
@@ -162,7 +163,7 @@ function Modules() {
                       borderRadius: '24px',
                       width: '92px',
                       textTransform: 'none',
-                      fontWeight: 'bold',
+                      fontWeight:'bold',
                     }}
                     onClick={() =>
                       module.completed
