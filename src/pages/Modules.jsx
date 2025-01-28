@@ -8,7 +8,7 @@ import { BsGeoAlt } from 'react-icons/bs';
 import { Button, Typography, Box } from '@mui/material';
 import modules from '../data/modules';
 
-const MODULES_VERSION = '1.0'; // Atualize esta versão ao fazer um novo deploy com novos módulos.
+const MODULES_VERSION = '1.1'; // Atualize esta versão ao fazer um novo deploy com novos módulos.
 
 function Modules() {
   const navigate = useNavigate();
