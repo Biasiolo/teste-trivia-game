@@ -36,6 +36,7 @@ body {
   background-color: #fdfdfd;
 }
 
+
 .modal-head,
 .modal-foot {
   background-color: hsl(273, 43%, 43%);
@@ -61,6 +62,11 @@ body {
 
 .resposta {
   font-size: 1.05rem !important;
+}
+
+.resposta:hover {
+  background-color: #1f73d3;
+  color:#f7f7f7;
 }
 
 .card-gradient {
@@ -141,3 +147,4 @@ body {
     transform: scale(1);
   }
 }
+

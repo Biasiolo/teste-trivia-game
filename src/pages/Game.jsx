@@ -170,7 +170,8 @@ function Game() {
                 variant="contained"
                 color="primary"
                 size="large"
-                className="mt-4"
+                className="my-4"
+                sx={{ borderRadius: '24px' }}
                 onClick={updateModuleProgress}
               >
                 Voltar aos Módulos
@@ -188,6 +189,7 @@ function Game() {
             <Button
               variant="contained"
               color="primary"
+              sx={{ borderRadius: '24px' }}
               onClick={() => navigate('/modules')}
             >
               Voltar aos Módulos

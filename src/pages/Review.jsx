@@ -59,7 +59,7 @@ function Review() {
         </tbody>
       </Table>
 
-      <div className="text-center mt-4">
+      <div className="text-center my-4">
         <Button variant="primary" onClick={() => navigate('/modules')}>
           Voltar aos Módulos
         </Button>

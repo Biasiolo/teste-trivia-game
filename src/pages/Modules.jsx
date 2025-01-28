@@ -8,7 +8,7 @@ import { BsGeoAlt } from 'react-icons/bs';
 import { Button, Typography, Box } from '@mui/material';
 import modules from '../data/modules';
 
-const MODULES_VERSION = '1.1'; // Atualize esta versão ao fazer um novo deploy com novos módulos.
+const MODULES_VERSION = '1.1'; // Atualizar versão para deploy com novos módulos.
 
 function Modules() {
   const navigate = useNavigate();
@@ -134,6 +134,7 @@ function Modules() {
                   <Button
                     variant={module.completed ? 'outlined' : 'contained'}
                     color="primary"
+                    sx={{ borderRadius: '24px' }}
                     onClick={() =>
                       module.completed
                         ? handleReview(module.id)
@@ -145,6 +146,7 @@ function Modules() {
                   <Button
                     variant="outlined"
                     color="error"
+                    sx={{ borderRadius: '24px' }}
                     onClick={() => resetModuleProgress(module.id)}
                   >
                     Reiniciar
@@ -161,6 +163,7 @@ function Modules() {
           variant="contained"
           color="primary"
           size="large"
+          sx={{ borderRadius: '24px' }}
           onClick={() => navigate('/')}
         >
           Voltar à Home

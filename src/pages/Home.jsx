@@ -43,9 +43,11 @@ function Home() {
           onClick={() => navigate('/modules')}
           sx={{
             backgroundColor: '#6A0DAD', // Cor roxa
+            borderRadius: '24px',
             color: '#fff', // Texto branco
             '&:hover': {
               backgroundColor: '#580A9E', // Tom mais escuro ao hover
+              
             },
           }}
         >

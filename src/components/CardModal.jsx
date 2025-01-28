@@ -58,6 +58,7 @@ function CardModal({ card, onClose, onAnswer }) {
               sx={{
                 textTransform: 'none',
                 fontWeight: 'bold',
+                borderRadius: '24px',
               }}
             >
               {answer}
@@ -73,7 +74,7 @@ function CardModal({ card, onClose, onAnswer }) {
             color="error"
             size="large"
             onClick={onClose}
-            sx={{ textTransform: 'none' }}
+            sx={{ textTransform: 'none', borderRadius: '24px' }}
           >
             Fechar
           </Button>
@@ -84,7 +85,7 @@ function CardModal({ card, onClose, onAnswer }) {
             size="large"
             onClick={handleSubmit}
             disabled={selected === null}
-            sx={{ textTransform: 'none', fontWeight: 'bold' }}
+            sx={{ textTransform: 'none', fontWeight: 'bold', borderRadius: '24px' }}
           >
             Responder
           </Button>
