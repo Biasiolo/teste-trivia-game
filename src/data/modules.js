@@ -87,9 +87,58 @@ const modulesData = [
       },
     ],
   },
-  
   {
     id: 2,
+    name: 'Orientação e Localização',
+    videoUrl: 'https://www.youtube.com/embed/Elz_eZf_aaI?si=9tqDa7SZgfMo11vi', // Link para vídeo aula específica
+    questions: [
+      {
+        id: 1,
+        concept: 'A rotação da Terra é o movimento que o planeta realiza em torno de seu próprio eixo, resultando na alternância entre dia e noite.',
+        question: 'Quanto tempo a Terra leva para completar uma rotação em torno de seu eixo?',
+        answers: ['12 horas', '24 horas', '48 horas', '365 dias'],
+        correct: 1,
+      },
+      {
+        id: 2,
+        concept: 'As linhas imaginárias conhecidas como paralelos e meridianos formam a base para o sistema de coordenadas geográficas.',
+        question: 'Qual é o nome do paralelo que divide a Terra em hemisfério norte e sul?',
+        answers: ['Meridiano de Greenwich', 'Trópico de Câncer', 'Equador', 'Trópico de Capricórnio'],
+        correct: 2,
+      },
+      {
+        id: 3,
+        concept: 'Os fusos horários são definidos com base na rotação da Terra e na divisão do planeta em 24 zonas horárias.',
+        question: 'Quantos graus cada fuso horário cobre aproximadamente na superfície terrestre?',
+        answers: ['10 graus', '15 graus', '30 graus', '45 graus'],
+        correct: 1,
+      },
+      {
+        id: 4,
+        concept: 'A inclinação do eixo terrestre e o movimento de translação da Terra ao redor do Sol causam as estações do ano.',
+        question: 'Qual é o ângulo de inclinação do eixo terrestre em relação ao plano de sua órbita?',
+        answers: ['15 graus', '23,5 graus', '45 graus', '90 graus'],
+        correct: 1,
+      },
+      {
+        id: 5,
+        concept: 'Os paralelos são linhas imaginárias traçadas horizontalmente ao longo da superfície terrestre.',
+        question: 'Verdadeiro ou Falso: O Trópico de Câncer está localizado ao sul do Equador.',
+        answers: ['Verdadeiro', 'Falso'],
+        correct: 1, // Falso
+      },
+      {
+        id: 6,
+        concept: 'O meridiano de Greenwich é a linha de longitude 0°, usada como referência para calcular fusos horários.',
+        question: 'Qual é o nome do fuso horário baseado no meridiano de Greenwich?',
+        answers: ['GMT (Greenwich Mean Time)', 'UTC (Universal Time Coordinated)', 'ZULU Time', 'Todos os anteriores'],
+        correct: 3,
+      },
+    ],
+  },
+  
+  {
+    id: 3,
     name: 'Geologia',
     videoUrl: 'https://www.youtube.com/embed/lX_NDtrBPn8', // Link para vídeo aula específica
     questions: [
@@ -183,57 +232,6 @@ const modulesData = [
       },
     ],
   },
-  
-  {
-    id: 3,
-    name: 'Orientação e Localização',
-    videoUrl: 'https://www.youtube.com/embed/Elz_eZf_aaI?si=9tqDa7SZgfMo11vi', // Link para vídeo aula específica
-    questions: [
-      {
-        id: 1,
-        concept: 'A rotação da Terra é o movimento que o planeta realiza em torno de seu próprio eixo, resultando na alternância entre dia e noite.',
-        question: 'Quanto tempo a Terra leva para completar uma rotação em torno de seu eixo?',
-        answers: ['12 horas', '24 horas', '48 horas', '365 dias'],
-        correct: 1,
-      },
-      {
-        id: 2,
-        concept: 'As linhas imaginárias conhecidas como paralelos e meridianos formam a base para o sistema de coordenadas geográficas.',
-        question: 'Qual é o nome do paralelo que divide a Terra em hemisfério norte e sul?',
-        answers: ['Meridiano de Greenwich', 'Trópico de Câncer', 'Equador', 'Trópico de Capricórnio'],
-        correct: 2,
-      },
-      {
-        id: 3,
-        concept: 'Os fusos horários são definidos com base na rotação da Terra e na divisão do planeta em 24 zonas horárias.',
-        question: 'Quantos graus cada fuso horário cobre aproximadamente na superfície terrestre?',
-        answers: ['10 graus', '15 graus', '30 graus', '45 graus'],
-        correct: 1,
-      },
-      {
-        id: 4,
-        concept: 'A inclinação do eixo terrestre e o movimento de translação da Terra ao redor do Sol causam as estações do ano.',
-        question: 'Qual é o ângulo de inclinação do eixo terrestre em relação ao plano de sua órbita?',
-        answers: ['15 graus', '23,5 graus', '45 graus', '90 graus'],
-        correct: 1,
-      },
-      {
-        id: 5,
-        concept: 'Os paralelos são linhas imaginárias traçadas horizontalmente ao longo da superfície terrestre.',
-        question: 'Verdadeiro ou Falso: O Trópico de Câncer está localizado ao sul do Equador.',
-        answers: ['Verdadeiro', 'Falso'],
-        correct: 1, // Falso
-      },
-      {
-        id: 6,
-        concept: 'O meridiano de Greenwich é a linha de longitude 0°, usada como referência para calcular fusos horários.',
-        question: 'Qual é o nome do fuso horário baseado no meridiano de Greenwich?',
-        answers: ['GMT (Greenwich Mean Time)', 'UTC (Universal Time Coordinated)', 'ZULU Time', 'Todos os anteriores'],
-        correct: 3,
-      },
-    ],
-  },
-  
 
   {
     id: 4,
@@ -304,7 +302,219 @@ const modulesData = [
         correct: 1,
       },
     ],
-  }
+  },
+  {
+  id: 5,
+  name: 'Relevo',
+  videoUrl: 'https://www.youtube.com/embed/GKjI3LL4-p4?si=CuVpGc6KPE7kPu7g', // Link para vídeo aula específica
+  questions: [
+    // Múltipla escolha
+    {
+      id: 1,
+      concept: 'A geomorfologia estuda as formas da superfície terrestre e os processos que as originam.',
+      question: 'Qual é o principal agente responsável pela formação de cavernas calcárias?',
+      answers: ['Intemperismo físico', 'Intemperismo químico', 'Tectonismo', 'Sedimentação'],
+      correct: 1, // Intemperismo químico
+    },
+    {
+      id: 2,
+      concept: 'As montanhas são formas de relevo resultantes de forças tectônicas.',
+      question: 'Qual processo tectônico é responsável pela formação de montanhas como os Andes?',
+      answers: ['Subducção', 'Falhamento', 'Erosão', 'Intemperismo químico'],
+      correct: 0, // Subducção
+    },
+    {
+      id: 3,
+      concept: 'O solo é a base para atividades humanas, formado a partir de processos de intemperismo.',
+      question: 'Qual tipo de solo é conhecido por sua alta fertilidade e predominância em áreas vulcânicas?',
+      answers: ['Latossolo', 'Terra roxa', 'Arenoso', 'Podzólico'],
+      correct: 1, // Terra roxa
+    },
+
+    // Verdadeiro ou falso
+    {
+      id: 4,
+      concept: 'As planícies são formas de relevo associadas a áreas de deposição de sedimentos.',
+      question: 'As planícies são formadas exclusivamente por agentes internos, como tectonismo.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 1, // Falso
+    },
+    {
+      id: 5,
+      concept: 'Os agentes internos, como tectonismo, atuam no interior da Terra, moldando o relevo.',
+      question: 'O tectonismo de placas divergentes resulta na formação de falhas geológicas.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 0, // Verdadeiro
+    },
+
+    // Associação
+    {
+      id: 6,
+      concept: 'As formas de relevo podem ser classificadas de acordo com os processos de formação.',
+      question: [
+        'Associe os tipos de relevo aos seus processos de formação:',
+        '1. Planalto.',
+        '2. Planície.',
+        '3. Montanha.',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Erosão - Sedimentação - Tectonismo',
+        '(B) Sedimentação - Tectonismo - Erosão',
+        '(C) Tectonismo - Sedimentação - Erosão',
+        '(D) Sedimentação - Erosão - Tectonismo',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 0, // Erosão - Sedimentação - Tectonismo
+    },
+    {
+      id: 7,
+      concept: 'O intemperismo físico e químico atuam de formas complementares na formação do solo.',
+      question: [
+        'Associe os tipos de intemperismo às suas características:',
+        '1. Físico.',
+        '2. Químico.',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Alteração da composição química - Fragmentação mecânica',
+        '(B) Fragmentação mecânica - Alteração da composição química',
+        '(C) Dissolução de minerais - Fragmentação mecânica',
+        '(D) Fragmentação mecânica - Dissolução de minerais',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 1, // Fragmentação mecânica - Alteração da composição química
+    },
+
+    // Múltipla escolha
+    {
+      id: 8,
+      concept: 'O Brasil possui relevo antigo, com predominância de planaltos e depressões.',
+      question: 'Qual é a característica do relevo brasileiro que favorece a formação de bacias sedimentares?',
+      answers: ['Estabilidade geológica', 'Intensa atividade vulcânica', 'Dobramentos modernos', 'Falhas transformantes'],
+      correct: 0, // Estabilidade geológica
+    },
+    {
+      id: 9,
+      concept: 'Os agentes externos atuam continuamente para esculpir o relevo terrestre.',
+      question: 'Qual agente externo é o principal responsável pela formação de vales em "V"?',
+      answers: ['Vento', 'Água', 'Gelo', 'Intemperismo químico'],
+      correct: 1, // Água
+    },
+  ],
+},
+{
+  id: 6,
+  name: 'Clima',
+  videoUrl: 'https://www.youtube.com/embed/Tl9k3pkuVP4?si=a74L9UrIZhSpSYIC', // Link fictício para vídeo aula
+  questions: [
+    // Múltipla escolha
+    {
+      id: 1,
+      concept: 'A atmosfera é composta por diferentes camadas que desempenham funções específicas.',
+      question: 'Qual camada da atmosfera é responsável pela maior parte dos fenômenos climáticos? ',
+      answers: ['Estratosfera', 'Troposfera', 'Mesosfera', 'Exosfera'],
+      correct: 1, // Troposfera
+    },
+    {
+      id: 2,
+      concept: 'Os fatores climáticos influenciam diretamente as variações de temperatura e precipitação.',
+      question: 'Qual dos seguintes fatores é diretamente influenciado pela latitude?',
+      answers: ['Altitude', 'Maritimidade', 'Radiação solar', 'Vegetação'],
+      correct: 2, // Radiação solar
+    },
+    {
+      id: 3,
+      concept: 'A circulação atmosférica global é responsável pela distribuição de calor e umidade no planeta.',
+      question: 'Qual é o fenômeno responsável pelos ventos alísios que sopram em direção ao Equador?',
+      answers: [
+        'Coriolis',
+        'Movimento de rotação',
+        'Convecção atmosférica',
+        'Diferenças de pressão',
+      ],
+      correct: 3, // Diferenças de pressão
+    },
+
+    // Verdadeiro ou falso
+    {
+      id: 4,
+      concept: 'Os tipos de clima são definidos com base em elementos como temperatura e precipitação.',
+      question: 'O clima tropical é caracterizado por estações bem definidas e baixa umidade ao longo do ano.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 1, // Falso
+    },
+    {
+      id: 5,
+      concept: 'Fenômenos climáticos como o El Niño têm impacto global.',
+      question:
+        'O fenômeno El Niño é causado pelo resfriamento anormal das águas do Oceano Pacífico, reduzindo a evaporação.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 1, // Falso
+    },
+
+    // Associação
+    {
+      id: 6,
+      concept:
+        'Os elementos e fatores climáticos atuam de maneira interligada para determinar o clima de uma região.',
+      question: [
+        'Associe os fatores climáticos aos seus exemplos:',
+        '1. Latitude',
+        '2. Altitude',
+        '3. Maritimidade',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Proximidade de oceanos - Variação de temperatura com a altura - Radiação solar',
+        '(B) Radiação solar - Variação de temperatura com a altura - Proximidade de oceanos',
+        '(C) Radiação solar - Proximidade de oceanos - Variação de temperatura com a altura',
+        '(D) Variação de temperatura com a altura - Radiação solar - Proximidade de oceanos',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 1, // Radiação solar - Variação de temperatura com a altura - Proximidade de oceanos
+    },
+
+    {
+      id: 7,
+      concept: 'Os protocolos e acordos climáticos têm como objetivo mitigar as mudanças climáticas.',
+      question: [
+        'Associe os acordos internacionais aos seus objetivos:',
+        '1. Protocolo de Kyoto.',
+        '2. Acordo de Paris.',
+        '3. Agenda 21.',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Redução de emissões de gases de efeito estufa - Limitar o aumento da temperatura global - Desenvolvimento sustentável',
+        '(B) Desenvolvimento sustentável - Limitar o aumento da temperatura global - Redução de emissões de gases de efeito estufa',
+        '(C) Limitar o aumento da temperatura global - Desenvolvimento sustentável - Redução de emissões de gases de efeito estufa',
+        '(D) Redução de emissões de gases de efeito estufa - Desenvolvimento sustentável - Limitar o aumento da temperatura global',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 0, // Redução de emissões de gases de efeito estufa - Limitar o aumento da temperatura global - Desenvolvimento sustentável
+    },
+
+    // Múltipla escolha
+    {
+      id: 8,
+      concept: 'As mudanças climáticas têm impactos socioambientais e econômicos significativos.',
+      question: 'Qual das alternativas representa um impacto direto das mudanças climáticas?',
+      answers: [
+        'Aumento da biodiversidade',
+        'Redução do nível do mar',
+        'Aumento da frequência de eventos climáticos extremos',
+        'Estabilidade da temperatura média global',
+      ],
+      correct: 2, // Aumento da frequência de eventos climáticos extremos
+    },
+    {
+      id: 9,
+      concept: 'Os tipos de clima são classificados de acordo com a temperatura, precipitação e localização geográfica.',
+      question: 'Qual é o clima predominante em regiões de desertos, caracterizado por baixa precipitação anual?',
+      answers: ['Equatorial', 'Temperado', 'Semiárido', 'Desértico'],
+      correct: 3, // Desértico
+    },
+  ],
+}
+
+
   
     
   ];
