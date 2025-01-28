@@ -9,6 +9,8 @@ import CardDeck from '../components/CardDeck';
 import VideoLesson from '../components/VideoLesson';
 import modules from '../data/modules'; // Importa os módulos
 
+const MODULES_VERSION = '1.0'; // Versão atual dos módulos
+
 function Game() {
   const { moduleId } = useParams(); // Captura o ID do módulo da URL
   const navigate = useNavigate();
@@ -20,8 +22,22 @@ function Game() {
   const [answeredQuestions, setAnsweredQuestions] = useState([]); // Para armazenar respostas e gabarito
 
   useEffect(() => {
+    const savedVersion = localStorage.getItem('modulesVersion');
+    const savedModules = JSON.parse(localStorage.getItem('modules')) || [];
+
+    if (savedVersion !== MODULES_VERSION) {
+      const updatedModules = modules.map((module) => {
+        const existingModule = savedModules.find((m) => m.id === module.id);
+        return existingModule
+          ? { ...module, ...existingModule }
+          : { ...module, completed: false, score: 0 };
+      });
+
+      localStorage.setItem('modules', JSON.stringify(updatedModules));
+      localStorage.setItem('modulesVersion', MODULES_VERSION);
+    }
     if (!module) {
-      navigate('/modules'); // Redireciona se o módulo não for encontrado
+      navigate('/modules');
     }
   }, [module, navigate]);
 
@@ -31,7 +47,11 @@ function Game() {
     // Armazena a questão respondida
     setAnsweredQuestions((prev) => [
       ...prev,
-      { ...answeredCard, isCorrect, userAnswer: answeredCard.answers[isCorrect ? answeredCard.correct : null] },
+      {
+        ...answeredCard,
+        isCorrect,
+        userAnswer: answeredCard.answers[isCorrect ? answeredCard.correct : null],
+      },
     ]);
 
     // Incrementa a pontuação correta, se acertar
@@ -80,15 +100,20 @@ function Game() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           {cards.length > 0 ? (
             <>
-              <Narrative messages={[
-                `Bem-vindo à trilha ${module?.name || ''}!`,
-                'Assista à videoaula para começar.',
-                'Responda aos cards e obtenha sua pontuação.',
-                'Revise sua performance na página de módulos.',
-                'Tudo pronto?',
-                'Boa sorte!',
-              ]} />
-              <VideoLesson videoUrl={module?.videoUrl || ''} moduleName={module?.name || ''} />
+              <Narrative
+                messages={[
+                  `Bem-vindo à trilha ${module?.name || ''}!`,
+                  'Assista à videoaula para começar.',
+                  'Responda aos cards e obtenha sua pontuação.',
+                  'Revise sua performance na página de módulos.',
+                  'Tudo pronto?',
+                  'Boa sorte!',
+                ]}
+              />
+              <VideoLesson
+                videoUrl={module?.videoUrl || ''}
+                moduleName={module?.name || ''}
+              />
               <Box className="w-50 mb-4">
                 <ProgressBar
                   now={progress}

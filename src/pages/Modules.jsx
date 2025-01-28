@@ -8,13 +8,31 @@ import { BsGeoAlt } from 'react-icons/bs';
 import { Button, Typography, Box } from '@mui/material';
 import modules from '../data/modules';
 
+const MODULES_VERSION = '1.0'; // Atualize esta versão ao fazer um novo deploy com novos módulos.
+
 function Modules() {
   const navigate = useNavigate();
   const [progressModules, setProgressModules] = useState([]);
 
   useEffect(() => {
+    const savedVersion = localStorage.getItem('modulesVersion');
     const savedModules = JSON.parse(localStorage.getItem('modules')) || [];
-    setProgressModules(savedModules.length ? savedModules : modules);
+
+    if (savedVersion !== MODULES_VERSION) {
+      // Atualiza módulos se a versão for diferente
+      const updatedModules = modules.map((module) => {
+        const existingModule = savedModules.find((m) => m.id === module.id);
+        return existingModule
+          ? { ...module, ...existingModule } // Mantém progresso existente
+          : { ...module, completed: false, score: 0 }; // Novo módulo
+      });
+
+      localStorage.setItem('modules', JSON.stringify(updatedModules));
+      localStorage.setItem('modulesVersion', MODULES_VERSION);
+      setProgressModules(updatedModules);
+    } else {
+      setProgressModules(savedModules);
+    }
   }, []);
 
   const completedModules = progressModules.filter((mod) => mod.completed);
@@ -50,7 +68,6 @@ function Modules() {
     }
   };
 
-  // Função para renderizar estrelas baseadas na pontuação
   const renderStars = (score) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -111,7 +128,7 @@ function Modules() {
                     : 'Ainda não iniciado.'}
                 </Card.Text>
                 <div className="d-flex justify-content-center">
-                  {renderStars(module.score)} {/* Renderiza estrelas com base na pontuação */}
+                  {renderStars(module.score)}
                 </div>
                 <div className="d-flex justify-content-center gap-3 mt-3">
                   <Button
@@ -145,9 +162,7 @@ function Modules() {
           color="primary"
           size="large"
           onClick={() => navigate('/')}
-          
         >
-          
           Voltar à Home
         </Button>
       </Box>
