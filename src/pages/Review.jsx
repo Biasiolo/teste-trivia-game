@@ -2,8 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Table, Button } from 'react-bootstrap';
-import { Typography } from '@mui/material';
+import { Table } from 'react-bootstrap';
+import { Typography, Button } from '@mui/material';
 
 function Review() {
   const { moduleId } = useParams();
@@ -60,9 +60,14 @@ function Review() {
       </Table>
 
       <div className="text-center my-4">
-        <Button variant="primary" onClick={() => navigate('/modules')}>
-          Voltar aos Módulos
-        </Button>
+      <Button
+              variant="contained"
+              color="primary"
+              sx={{ borderRadius: '24px' }}
+              onClick={() => navigate('/modules')}
+            >
+              Voltar aos Módulos
+            </Button>
       </div>
     </div>
   );
