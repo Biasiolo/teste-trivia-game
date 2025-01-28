@@ -12,7 +12,7 @@ function Review() {
   const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
   const reviewData = savedReviews.find((r) => r.moduleId === parseInt(moduleId, 10));
 
-  
+
 
 
   if (!reviewData) {
@@ -30,13 +30,13 @@ function Review() {
     <div className="container mt-5 p-4 flex-column d-flex justify-content-center align-items-center text-center">
       <h1 className="display-4 fw-bold text-dark text-center mb-4">{reviewData.moduleName}</h1>
       <Typography variant="h5" color="#2afd00" fontWeight="bold">
-      <h2 className="text-center mb-4 fw-bold">Nota: {reviewData.score}%</h2>
-              </Typography>
-      
+        <h2 className="text-center mb-4 fw-bold">Nota: {reviewData.score}%</h2>
+      </Typography>
+
 
       <h3 className="mt-4 text-info">Gabarito</h3>
-      <Table striped borderless hover responsive  className="mt-3 table-success fs-6 justify-content-center">
-                      <thead className="table-primary">
+      <Table striped borderless hover responsive className="mt-3 table-success fs-6 justify-content-center align-items-center">
+        <thead className="table-primary">
           <tr>
             <th>#</th>
             <th>Pergunta</th>
@@ -60,14 +60,14 @@ function Review() {
       </Table>
 
       <div className="text-center my-4">
-      <Button
-              variant="contained"
-              color="primary"
-              sx={{ borderRadius: '24px' }}
-              onClick={() => navigate('/modules')}
-            >
-              Voltar aos Módulos
-            </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ borderRadius: '24px' }}
+          onClick={() => navigate('/modules')}
+        >
+          Voltar aos Módulos
+        </Button>
       </div>
     </div>
   );
