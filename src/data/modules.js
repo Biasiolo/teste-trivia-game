@@ -1,7 +1,7 @@
 const modulesData = [
   {
     id: 1,
-    name: 'Introdução ao Pensamento Geográfico',
+    name: 'Pensamento Geográfico',
     videoUrl: 'https://www.youtube.com/embed/xn_rU45f0l8?si=C6IY5EZ1KzTi-6-P', // Link para vídeo aula específica
     questions: [
       {
@@ -512,7 +512,193 @@ const modulesData = [
       correct: 3, // Desértico
     },
   ],
+},
+{
+  id: 7,
+  name: 'Vegetação',
+  videoUrl: 'https://www.youtube.com/embed/91mhB7g5xO0?si=rNecnV9kTiHg3Ndh', // Link para vídeo aula
+  questions: [
+    // Múltipla escolha
+    {
+      id: 1,
+      concept: 'Os biomas são grandes ecossistemas com características semelhantes de clima, solo e vegetação.',
+      question: 'Qual dos seguintes biomas é conhecido por sua biodiversidade e clima quente e úmido?',
+      answers: ['Tundra', 'Floresta Amazônica', 'Taiga', 'Savanas Africanas'],
+      correct: 1, // Floresta Amazônica
+    },
+    {
+      id: 2,
+      concept: 'Os biomas brasileiros possuem características únicas devido à sua localização e clima.',
+      question: 'Qual bioma brasileiro é caracterizado por vegetação rasteira e adaptada à seca?',
+      answers: ['Pantanal', 'Cerrado', 'Caatinga', 'Mata Atlântica'],
+      correct: 2, // Caatinga
+    },
+    {
+      id: 3,
+      concept: 'Os impactos ambientais afetam os biomas de maneira variada, dependendo da intensidade e tipo de ação humana.',
+      question: 'Qual atividade humana é a principal responsável pelo desmatamento na Amazônia?',
+      answers: [
+        'Mineração',
+        'Expansão agropecuária',
+        'Construção de barragens',
+        'Expansão urbana',
+      ],
+      correct: 1, // Expansão agropecuária
+    },
+    {
+      id: 4,
+      concept: 'Os biomas possuem diferentes tipos de solo, que influenciam diretamente a vegetação presente.',
+      question: 'Qual tipo de solo é encontrado predominantemente no Cerrado e é pobre em nutrientes?',
+      answers: ['Latossolo', 'Argiloso', 'Podzólico', 'Calcário'],
+      correct: 0, // Latossolo
+    },
+
+    // Verdadeiro ou falso
+    {
+      id: 5,
+      concept: 'A Mata Atlântica é um dos biomas mais ameaçados do Brasil devido à exploração humana.',
+      question: 'A Mata Atlântica já perdeu mais de 80% de sua vegetação original.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 0, // Verdadeiro
+    },
+
+    // Associação
+    {
+      id: 6,
+      concept:
+        'Os biomas mundiais apresentam vegetações e condições climáticas específicas que os caracterizam.',
+      question: [
+        'Associe os biomas às suas características predominantes:',
+        '1. Tundra.',
+        '2. Savana.',
+        '3. Floresta Temperada.',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Vegetação rasteira - Árvores esparsas - Árvores caducifólias',
+        '(B) Árvores caducifólias - Vegetação rasteira - Árvores esparsas',
+        '(C) Árvores esparsas - Árvores caducifólias - Vegetação rasteira',
+        '(D) Vegetação rasteira - Árvores caducifólias - Árvores esparsas',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 0, // Vegetação rasteira - Árvores esparsas - Árvores caducifólias
+    },
+    {
+      id: 7,
+      concept: 'A vegetação mundial é classificada de acordo com o clima, o solo e as características das espécies predominantes.',
+      question: 'Qual bioma é caracterizado por temperaturas muito baixas, solos congelados e vegetação rasteira como líquens e musgos?',
+      answers: ['Taiga', 'Tundra', 'Savanas Africanas', 'Floresta Temperada'],
+      correct: 1, // Tundra
+    },
+
+    // Nova questão: Verdadeiro ou falso
+    {
+      id: 8,
+      concept: 'Os desertos são biomas encontrados em diferentes continentes, caracterizados por baixa precipitação e adaptações específicas das plantas ao clima seco.',
+      question: 'Os desertos possuem alta biodiversidade devido à sua abundância de água e clima ameno.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 1, // Falso
+    },
+  ],
+},
+{
+  id: 8,
+  name: 'Hidrografia',
+  videoUrl: 'https://www.youtube.com/embed/gZph9ax8Xpg?si=b1fEHMfIuZbCaVcr', // Link para vídeo aula
+  questions: [
+    // Múltipla escolha
+    {
+      id: 1,
+      concept: 'A hidrografia continental estuda os rios, lagos, aquíferos e outros corpos d’água localizados no interior dos continentes.',
+      question: 'Qual é a maior bacia hidrográfica do mundo em volume de água?',
+      answers: [
+        'Bacia do Congo',
+        'Bacia Amazônica',
+        'Bacia do Mississipi',
+        'Bacia do Nilo',
+      ],
+      correct: 1, // Bacia Amazônica
+    },
+    {
+      id: 2,
+      concept: 'O Brasil possui uma vasta rede hidrográfica, com várias bacias hidrográficas importantes.',
+      question: 'Qual das seguintes bacias hidrográficas é totalmente brasileira?',
+      answers: ['Bacia do Tocantins-Araguaia', 'Bacia Platina', 'Bacia do Amazonas', 'Bacia do São Francisco'],
+      correct: 0, // Bacia do Tocantins-Araguaia
+    },
+    {
+      id: 3,
+      concept: 'O litoral brasileiro é extenso e possui características variadas ao longo de sua extensão.',
+      question: 'Qual das seguintes formações é uma característica comum do litoral nordestino brasileiro?',
+      answers: ['Manguezais', 'Fiordes', 'Deltas', 'Falésias'],
+      correct: 3, // Falésias
+    },
+    {
+      id: 4,
+      concept: 'A poluição dos corpos hídricos é um dos principais impactos ambientais que afetam a hidrografia global.',
+      question: 'Qual dos seguintes poluentes é mais associado ao impacto ambiental conhecido como “eutrofização”?',
+      answers: [
+        'Hidrocarbonetos',
+        'Fósforo e nitrogênio de fertilizantes',
+        'Microplásticos',
+        'Metais pesados como mercúrio',
+      ],
+      correct: 1, // Fósforo e nitrogênio de fertilizantes
+    },
+
+    // Verdadeiro ou falso
+    {
+      id: 5,
+      concept: 'O aquífero Guarani é uma das maiores reservas subterrâneas de água doce do mundo.',
+      question: 'O aquífero Guarani está localizado exclusivamente no território brasileiro.',
+      answers: ['Verdadeiro', 'Falso'],
+      correct: 1, // Falso
+    },
+
+    // Associação
+    {
+      id: 6,
+      concept:
+        'As bacias hidrográficas são importantes unidades de análise na hidrografia por representarem a área de drenagem de um rio principal e seus afluentes.',
+      question: [
+        'Associe as bacias hidrográficas aos seus principais rios:',
+        '1. Bacia Platina.',
+        '2. Bacia do São Francisco.',
+        '3. Bacia Amazônica.',
+        '',
+        'Escolha a sequência correta:',
+        '(A) Rio Paraná - Rio São Francisco - Rio Amazonas',
+        '(B) Rio Amazonas - Rio Paraná - Rio São Francisco',
+        '(C) Rio São Francisco - Rio Amazonas - Rio Paraná',
+        '(D) Rio Paraná - Rio Amazonas - Rio São Francisco',
+      ],
+      answers: ['A', 'B', 'C', 'D'],
+      correct: 0, // Rio Paraná - Rio São Francisco - Rio Amazonas
+    },
+
+    // Múltipla escolha
+    {
+      id: 7,
+      concept: 'O ciclo hidrológico é o processo de movimentação e transformação da água na Terra.',
+      question: 'Qual etapa do ciclo hidrológico é responsável pelo transporte de água da superfície terrestre para a atmosfera?',
+      answers: ['Infiltração', 'Transpiração', 'Evaporação', 'Precipitação'],
+      correct: 2, // Evaporação
+    },
+    {
+      id: 8,
+      concept: 'O impacto ambiental relacionado à água é amplamente discutido devido à sua importância para a sobrevivência humana e dos ecossistemas.',
+      question: 'Qual das alternativas representa uma consequência direta da escassez de água em regiões áridas?',
+      answers: [
+        'Aumento da biodiversidade',
+        'Avanço da desertificação',
+        'Redução da salinidade dos solos',
+        'Expansão de manguezais',
+      ],
+      correct: 1, // Avanço da desertificação
+    },
+  ],
 }
+
+
 
 
   

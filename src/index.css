@@ -17,6 +17,12 @@ body {
   background-color: #733e9d;
 }
 
+.titulo-mod {
+  font-size: 1.1rem !important;
+}
+
+
+
 .card {
   transition: all 0.5s ease-in-out;
   cursor: pointer;

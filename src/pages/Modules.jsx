@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { ProgressBar, Card } from 'react-bootstrap';
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 import { SlGraph } from "react-icons/sl";
-import { BsGeoAlt } from 'react-icons/bs';
+import { FaPlay } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 import { Button, Typography, Box } from '@mui/material';
 import modules from '../data/modules';
 
-const MODULES_VERSION = '1.1'; // Atualizar versão para deploy com novos módulos.
+const MODULES_VERSION = '1.3'; // Atualizar versão para deploy com novos módulos.
 
 function Modules() {
   const navigate = useNavigate();
@@ -113,28 +114,56 @@ function Modules() {
         {progressModules.map((module) => (
           <div
             key={module.id}
-            className="col-lg-6 col-md-6 col-sm-12 mb-4 d-flex justify-content-center"
+            className="col-lg-3 col-md-6 col-sm-12 mb-4 d-flex justify-content-center"
           >
             <Card
-              className={`shadow-sm ${module.completed ? 'border-info' : ''} w-100`}
+              className={`shadow-sm ${module.completed ? 'border-info bg-success-subtle' : ''} w-100 text-center`}
             >
               <Card.Body>
-                <Card.Title className="text-center text-dark fw-bold">
-                  <BsGeoAlt className="me-2 text-info" size={24} /> {module.name}
+                <Card.Title className="text-center titulo-mod text-dark fw-bold">
+                  {module.name}
                 </Card.Title>
+                <div className="justify-content-center align-items-center text-center">
+                  {/* Ícone dinâmico para estado de início ou conclusão */}
+                  {module.completed ? (
+                    <FaCheck className="text-success mb-2" size={20} />
+                  ) : (
+                    <FaPlay className="text-warning mb-2" size={18} />
+                  )}
+                </div>
                 <Card.Text className="text-center text-secondary">
                   {module.completed
                     ? `Módulo concluído. Nota: ${module.score}%`
                     : 'Ainda não iniciado.'}
                 </Card.Text>
                 <div className="d-flex justify-content-center">
-                  {renderStars(module.score)}
+                  {renderStars(module.score)} {/* Renderiza estrelas com base na pontuação */}
                 </div>
                 <div className="d-flex justify-content-center gap-3 mt-3">
+                <Button
+                    variant="outlined"
+                    color="error"
+                    size="small"
+                    sx={{
+                      borderRadius: '24px',
+                      width: '92px',
+                      textTransform: 'none',
+                      fontWeight: 'bold',
+                    }}
+                    onClick={() => resetModuleProgress(module.id)}
+                  >
+                    Reiniciar
+                  </Button>
                   <Button
                     variant={module.completed ? 'outlined' : 'contained'}
                     color="primary"
-                    sx={{ borderRadius: '24px' }}
+                    size="small"
+                    sx={{
+                      borderRadius: '24px',
+                      width: '92px',
+                      textTransform: 'none',
+                      fontWeight: 'bold',
+                    }}
                     onClick={() =>
                       module.completed
                         ? handleReview(module.id)
@@ -143,14 +172,7 @@ function Modules() {
                   >
                     {module.completed ? 'Revisar' : 'Começar'}
                   </Button>
-                  <Button
-                    variant="outlined"
-                    color="error"
-                    sx={{ borderRadius: '24px' }}
-                    onClick={() => resetModuleProgress(module.id)}
-                  >
-                    Reiniciar
-                  </Button>
+                  
                 </div>
               </Card.Body>
             </Card>
